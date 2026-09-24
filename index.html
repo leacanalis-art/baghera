@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agence Baghera</title>
+<meta name="description" content="Baghera est une agence d’influence basée à Toulouse, spécialisée dans la représentation de créateurs de contenu experts : santé, skincare, nutrition, immobilier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@0;1&family=Poppins:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (!img || img.tagName !== "IMG") return;
+    if (img.classList.contains("logo-img")) {
+      var s = document.createElement("span");
+      s.className = "logo-texte";
+      s.textContent = "Baghera";
+      img.replaceWith(s);
+      return;
+    }
+    if (img.classList.contains("partenaire-img")) {
+      var m = document.createElement("span");
+      m.className = "marque-texte";
+      m.textContent = img.alt || "";
+      img.replaceWith(m);
+      return;
+    }
+    var logoWrap = img.closest(".marque-logo");
+    if (logoWrap) {
+      logoWrap.classList.add("placeholder");
+      logoWrap.textContent = img.alt || logoWrap.getAttribute("data-nom") || "";
+      return;
+    }
+    img.style.display = "none";
+  }, true);
+})();
+</script>
+</head>
+<body>
+
+<header class="barre">
+ <div class="wrap">
+ <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu"><span class="traits" aria-hidden="true"><i></i><i></i><i></i></span><span class="burger-txt">Menu</span></button>
+ <a class="logo" href="#accueil" aria-label="Baghera Influence — accueil"><img class="logo-img" src="assets/img/logo-baghera.png" alt="Baghera Influence" width="300" height="120"></a>
+ <a class="btn btn-orange rdv" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener"><span class="point" aria-hidden="true"></span>Prendre RDV</a>
+ </div>
+ <nav class="menu-plein" id="menu" aria-label="Navigation principale" hidden>
+ <div class="wrap menu-grille">
+ <ul class="menu-liens">
+ <li><a href="#accompagner" data-nav="accompagner"><small>Ce que nous faisons</small>Accompagner</a></li>
+ <li><a href="#projets" data-nav="projets"><small>Nos campagnes</small>Projets</a></li>
+ <li><a href="#createurs" data-nav="createurs"><small>Nos talents experts</small>Créateurs</a></li>
+ <li><a href="#equipe" data-nav="equipe"><small>Les fondatrices</small>Équipe</a></li>
+ <li><a href="#blog" data-nav="blog"><small>Coulisses & décryptages</small>Blog</a></li>
+ </ul>
+ <div class="menu-infos">
+ <p class="eyebrow">Parlons de votre projet</p>
+ <p class="menu-mail">bonjour@influencebaghera.com</p>
+ <a class="btn btn-orange fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
+ <a class="menu-lien-contact" href="#contact">Nous écrire</a>
+ <a class="menu-lien-contact" href="https://www.instagram.com/agencebaghera/" target="_blank" rel="noopener">Instagram ↗</a>
+ <p class="muted-clair">Toulouse · Aix-en-Provence</p>
+ </div>
+ </div>
+ </nav>
+</header>
+
+<main id="contenu">
+
+ <!-- ================= ACCUEIL ================= -->
+ <div class="vue" id="v-accueil" data-vue="accueil">
+ <section class="hero">
+ <div class="wrap">
+ <div class="hero-texte">
+ <span class="eyebrow">Agence de talents experts · Toulouse & Aix-en-Provence</span>
+ <h1>Nous accompagnons les profils <em class="s">experts</em> de l’influence.</h1>
+ <p class="lead">Santé, skincare, micronutrition, immobilier, finance… Baghera représente des créatrices dont l’expertise fait la crédibilité, et construit avec les marques des campagnes utiles, justes et qui performent.</p>
+ <div class="actions">
+ <a class="btn btn-orange fleche" href="#projets">Voir nos projets</a>
+ <a class="btn btn-clair" href="#createurs">Rencontrer nos talents</a>
+ </div>
+ </div>
+ <div class="telephones flotte" id="telephones" aria-label="Nos trois accompagnements en images"></div>
+ </div>
+ </section>
+
+ <section class="impact" aria-labelledby="t-impact">
+ <div class="wrap">
+ <div class="impact-these">
+ <span class="eyebrow">Pourquoi l’expertise</span>
+ <h2 id="t-impact" style="margin-top:14px">L’influence fait vendre.<br><em class="s">L’expertise</em> fait confiance.</h2>
+ <p>Les consommateurs achètent sur recommandation, mais ils exigent de la transparence et de la crédibilité. C’est pourquoi Baghera ne représente que des créatrices expertes, et construit chaque campagne sur leur légitimité.</p>
+ </div>
+ <div class="chiffres">
+ <div class="chiffre chiffre-fort">
+ <b>75<span>%</span></b>
+ <p>des consommateurs ont déjà acheté un produit après avoir vu une campagne d’influence.</p>
+ <small>Étude Reech 2025 · 1 000 Français interrogés</small>
+ </div>
+ <div class="chiffre">
+ <b>72<span>%</span></b>
+ <p>réclament une clarté absolue sur les collaborations entre marques et créateurs.</p>
+ <small>Étude Reech 2025</small>
+ </div>
+ <div class="chiffre">
+ <b>+1<span>M</span></b>
+ <p>d’abonnés cumulés chez nos créatrices, en santé, skincare, nutrition et finance.</p>
+ <small>Talents Baghera</small>
+ </div>
+ <div class="chiffre">
+ <b>8<span>ans</span></b>
+ <p>d’expérience dans le marketing d’influence, au service des marques comme des créateurs.</p>
+ <small>Équipe Baghera</small>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section class="defile" aria-labelledby="t-savoir">
+ <div class="wrap tete">
+ <div>
+ <span class="eyebrow">Nos formats</span>
+ <h2 id="t-savoir" style="margin-top:12px">Chaque besoin a <em class="s">son format</em></h2>
+ </div>
+ <p class="muted">Réels, vidéos longues, podcasts, tournages sur le terrain, conférences : nous choisissons le format qui sert votre message et l’expertise de la créatrice.</p>
+ </div>
+ <div class="piste">
+ <div class="rail" id="rail"></div>
+ </div>
+ </section>
+
+ <section class="campagnes" aria-labelledby="t-campagnes">
+ <div class="wrap">
+ <div class="tete">
+ <div>
+ <span class="eyebrow">Campagnes récentes</span>
+ <h2 id="t-campagnes" style="margin-top:12px">Quand l’expertise <em class="s">rencontre</em> les marques</h2>
+ </div>
+ <a class="btn btn-orange fleche" href="#projets">Tous les projets</a>
+ </div>
+ <div class="carrousel-zone">
+ <button class="rond cote gauche" data-defile="-1" aria-label="Campagnes précédentes">←</button>
+ <div class="carrousel" id="carrousel"></div>
+ <button class="rond cote droite" data-defile="1" aria-label="Campagnes suivantes">→</button>
+ </div>
+ </div>
+ </section>
+
+ <section class="double-cta" aria-labelledby="t-double-cta">
+ <div class="wrap">
+ <h2 id="t-double-cta" class="visually-hidden">Travailler avec Baghera</h2>
+ <div class="cta-cartes">
+ <article class="cta-carte marque">
+ <span class="eyebrow">Vous êtes une marque</span>
+ <h3>Construisons votre prochaine campagne avec une <em class="s">experte</em>.</h3>
+ <p>Santé, skincare, nutrition, finance : trente minutes suffisent pour cerner votre besoin et vous proposer les bons profils.</p>
+ <div class="cta-duo">
+ <a class="btn btn-orange fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
+ <a class="btn btn-clair" href="#contact" data-profil="marque">Nous écrire</a>
+ </div>
+ </article>
+ <article class="cta-carte createur">
+ <span class="eyebrow">Vous êtes créateur·rice</span>
+ <h3>Votre expertise mérite d’être <em class="s">représentée</em>.</h3>
+ <p>Pharmacie, dermocosmétique, nutrition, immobilier… Vous créez du contenu expert ? Présentez-nous votre profil, nous lisons chaque candidature.</p>
+ <div class="cta-duo">
+ <a class="btn btn-brun fleche" href="#contact" data-profil="createur">Rejoindre l’agence</a>
+ <a class="btn btn-blanc-ligne" href="#contact" data-profil="createur" data-sujet="Autre question">Une question ? Contactez-nous</a>
+ </div>
+ </article>
+ </div>
+ </div>
+ </section>
+
+ <section class="confiance" aria-labelledby="t-confiance">
+ <div class="wrap">
+ <span class="eyebrow">Ils nous font confiance</span>
+ <h2 id="t-confiance" style="margin-top:12px">Des marques qui misent sur <em class="s">l’expertise</em></h2>
+ </div>
+ <div class="piste marques-piste">
+ <div class="rail marques-rail" id="marques-rail"></div>
+ </div>
+ </section>
+
+ <section class="avis" aria-labelledby="t-avis">
+ <div class="wrap">
+ <div class="tete">
+ <span class="eyebrow">Avis</span>
+ <h2 id="t-avis" style="margin-top:12px">Ce qu’ils disent <em class="s">de nous</em></h2>
+ </div>
+ </div>
+ <div class="piste avis-piste">
+ <div class="rail avis-rail" id="avis-grille"></div>
+ </div>
+ </section>
+
+ <section class="talents-accueil" aria-labelledby="t-talents">
+ <div class="wrap">
+ <div class="tete">
+ <div>
+ <span class="eyebrow">Nos créatrices</span>
+ <h2 id="t-talents" style="margin-top:12px">Des expertes pour <em class="s">porter</em> vos messages</h2>
+ </div>
+ <a class="btn btn-ligne fleche" href="#createurs">Découvrir tous nos talents</a>
+ </div>
+ <div class="talents-grille" id="talents-accueil"></div>
+ </div>
+ </section>
+
+ <section class="toulouse bloc-sable" aria-labelledby="t-toulouse">
+ <div class="wrap">
+ <div>
+ <span class="eyebrow">Influence locale</span>
+ <h2 id="t-toulouse" style="margin-top:12px">Ancrées à <span class="serif">Toulouse,</span> tournées vers la France</h2>
+ <div class="villes"><span class="chip">Toulouse</span><span class="chip">Aix-en-Provence</span><span class="chip">Sud de la France</span></div>
+ </div>
+ <div>
+ <p class="lead">Baghera accompagne les marques avec une vision nationale du marketing d’influence, tout en ayant à cœur de développer l’influence locale à Toulouse et dans le Sud de la France.</p>
+ <p style="margin-top:1em">Encore peu exploitée comme outil de communication dans la région, l’influence peut faire rayonner les marques avec des stratégies sur-mesure, créatives et performantes, alliant proximité et impact. Nous réalisons des activations avec des créateurs locaux et organisons des événements couverts par des campagnes d’influence, pour maximiser la visibilité auprès des audiences de la région.</p>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================= PROJETS ================= -->
+ <div class="vue" id="v-projets" data-vue="projets" hidden>
+ <div class="wrap page-tete">
+ <span class="eyebrow">Projets</span>
+ <h1 style="margin-top:16px">Nos derniers <em class="s">projets</em></h1>
+ <p class="lead">Santé, skincare, immobilier, finance, micronutrition, déco : des campagnes où l’expertise de nos créatrices fait la différence. Filtrez par univers.</p>
+ <div class="filtres" id="filtres" role="group" aria-label="Filtrer par catégorie"></div>
+ </div>
+ <div class="wrap">
+ <div class="grille-projets" id="grille-projets"></div>
+ <p class="vide" id="vide" hidden>Aucun projet pour ce filtre pour le moment.</p>
+ </div>
+ </div>
+
+ <!-- ================= FICHE PROJET ================= -->
+ <div class="vue" id="v-projet" data-vue="projet" hidden></div>
+
+ <!-- ================= CRÉATEURS ================= -->
+ <div class="vue" id="v-createurs" data-vue="createurs" hidden>
+ <div class="wrap page-tete">
+ <span class="eyebrow">Créateurs</span>
+ <h1 style="margin-top:16px">Des experts pour porter <em class="s">vos messages</em></h1>
+ <p class="lead">Choisir le bon créateur est essentiel pour que votre message soit crédible et impactant. Un expert ne se contente pas de produire du contenu : il apporte confiance et légitimité auprès de sa communauté. Chez Baghera, nous sélectionnons des créatrices reconnues pour leur expertise, qui savent adapter chaque message aux bons codes et aux bons formats.</p>
+ </div>
+ <div class="wrap">
+ <div class="talents-grille" id="talents-page"></div>
+ </div>
+ <section aria-labelledby="t-partenaires">
+ <div class="wrap" style="text-align:center">
+ <span class="eyebrow">Ils nous font confiance</span>
+ <h2 id="t-partenaires" style="margin-top:12px">Des partenaires <em class="s">de confiance</em></h2>
+ <div class="partenaires">
+ <img class="partenaire-img" src="assets/img/logos/aroma-zone.png" alt="Aroma-Zone" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/easypara.png" alt="Easypara" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/yepoda.png" alt="Yepoda" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/sanoflore.png" alt="Sanoflore" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/centifolia.png" alt="Centifolia" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/jaldes.png" alt="Jaldes" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/soraali.png" alt="Soraāli" loading="lazy">
+ <img class="partenaire-img" src="assets/img/logos/cosmebio.png" alt="Cosmebio" loading="lazy">
+ </div>
+ </div>
+ </section>
+ <section class="bloc-sable" aria-labelledby="t-rejoindre">
+ <div class="wrap rejoindre">
+ <div>
+ <span class="eyebrow">Créateurs & créatrices</span>
+ <h2 id="t-rejoindre" style="margin-top:12px">Vous êtes <em class="s">expert·e</em> et vous créez du contenu ?</h2>
+ <p class="lead" style="margin-top:16px">Nous choisissons nos talents avec exigence et construisons avec chacun un parcours sur mesure. Présentez-nous votre profil.</p>
+ </div>
+ <div class="cta-duo">
+ <a class="btn btn-orange fleche" href="#contact" data-profil="createur">Rejoindre l’agence</a>
+ <a class="btn btn-ligne" href="#contact" data-profil="createur" data-sujet="Autre question">Une question ? Contactez-nous</a>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================= FICHE TALENT ================= -->
+ <div class="vue" id="v-talent" data-vue="talent" hidden></div>
+
+ <!-- ================= ACCOMPAGNER ================= -->
+ <div class="vue" id="v-accompagner" data-vue="accompagner" hidden>
+ <div class="wrap page-tete">
+ <span class="eyebrow">Accompagner</span>
+ <h1 style="margin-top:16px">Trois façons de <em class="s">vous accompagner</em></h1>
+ <p class="lead">Représenter des créatrices expertes, piloter une stratégie d’influence de A à Z, ou intervenir sur un besoin précis : chaque accompagnement s’adapte à vos ressources et à vos objectifs.</p>
+ <nav class="sommaire" aria-label="Les trois accompagnements">
+ <a href="#offre-talents"><span>Talent management</span></a>
+ <a href="#offre-accompagnement"><span>Accompagnement stratégique</span></a>
+ <a href="#offre-activations"><span>Activations ponctuelles</span></a>
+ </nav>
+ </div>
+
+ <section class="offre-section brun" id="offre-talents" aria-labelledby="t-offre-talents">
+ <div class="wrap offre-grille">
+ <div class="offre-photo"><img src="assets/img/offre-talents.jpg" alt="Les trois fondatrices de Baghera en réunion de travail" loading="lazy"></div>
+ <div class="offre-texte">
+ <span class="eyebrow">Talent management</span>
+ <h2 id="t-offre-talents">Révéler et faire grandir des créatrices <em class="s">expertes</em>.</h2>
+ <p>Baghera représente en exclusivité des créatrices reconnues pour leur expertise : pharmacienne, dermocosméticienne, diététicienne, investisseuse. Nous les choisissons avec exigence, pour la qualité de leurs contenus et parce que nous croyons profondément en elles.</p>
+ <div class="deux-listes">
+ <div>
+ <h3>Pour nos talents</h3>
+ <ul class="tirets">
+ <li>Stratégie de développement et positionnement</li>
+ <li>Sélection de marques alignées avec leurs valeurs</li>
+ <li>Gestion des partenariats et des contrats</li>
+ <li>Un parcours construit sur mesure, dans la durée</li>
+ </ul>
+ </div>
+ <div>
+ <h3>Pour les marques</h3>
+ <ul class="tirets">
+ <li>Contenus experts : réels, posts, vidéos</li>
+ <li>Concepts innovants : webséries, podcasts</li>
+ <li>Conférences, webinars et ateliers</li>
+ </ul>
+ </div>
+ </div>
+ <div class="cta-createurs">
+ <p class="cta-note">Vous êtes créateur·rice expert·e ?</p>
+ <div class="cta-duo">
+ <a class="btn btn-orange fleche" href="#contact" data-profil="createur">Rejoindre l’agence</a>
+ <a class="btn btn-clair" href="#contact" data-profil="createur" data-sujet="Autre question">Une question ? Contactez-nous</a>
+ </div>
+ </div>
+ <a class="lien-discret" href="#createurs">Découvrir nos talents →</a>
+ </div>
+ </div>
+ </section>
+
+ <section class="offre-section sable" id="offre-accompagnement" aria-labelledby="t-offre-accompagnement">
+ <div class="wrap as-tete">
+ <div class="as-texte">
+ <span class="eyebrow">Accompagnement stratégique</span>
+ <h2 id="t-offre-accompagnement">Votre influence, <em class="s">de A à Z</em>.</h2>
+ <p>Une prise en charge complète de votre stratégie d’influence, construite selon vos enjeux et vos objectifs, pour des collaborations pertinentes, cohérentes et génératrices de résultats sur le long terme.</p>
+ <div class="cta-duo">
+ <a class="btn btn-brun fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
+ <a class="btn btn-ligne" href="#contact" data-profil="marque">Nous écrire</a>
+ </div>
+ </div>
+ <div class="as-photo"><img src="assets/img/offre-accompagnement.jpg" alt="Une fondatrice de Baghera, tablette en main" loading="lazy"></div>
+ </div>
+ <div class="wrap">
+ <ol class="frise" aria-label="Les étapes de l’accompagnement">
+ <li><b>Stratégie</b><span>Objectifs, messages, leviers</span></li>
+ <li><b>Casting</b><span>Les créateurs justes pour votre marque</span></li>
+ <li><b>Négociation</b><span>Cadre, budget, contrats</span></li>
+ <li><b>Coordination</b><span>Suivi des collaborations et des contenus</span></li>
+ <li><b>Reporting</b><span>Résultats et recommandations</span></li>
+ </ol>
+ </div>
+ </section>
+
+ <section class="offre-section orange" id="offre-activations" aria-labelledby="t-offre-activations">
+ <div class="wrap ap-grille">
+ <div class="ap-texte">
+ <span class="eyebrow">Activations ponctuelles</span>
+ <h2 id="t-offre-activations">Une expertise, là où vous <em class="s">en avez besoin</em>.</h2>
+ <p>Marque ou créateur, vous avez un besoin précis ? Baghera s’intègre à vos équipes et à vos dispositifs existants, le temps d’un projet.</p>
+ <p class="ap-question">De quoi avez-vous besoin ?</p>
+ <div class="ap-besoins">
+ <a href="#contact" data-sujet="Activation ponctuelle">Un casting</a>
+ <a href="#contact" data-sujet="Activation ponctuelle">Un événement</a>
+ <a href="#contact" data-sujet="Activation ponctuelle">Des contenus</a>
+ <a href="#contact" data-sujet="Activation ponctuelle">Un podcast</a>
+ <a href="#contact" data-sujet="Activation ponctuelle">Un projet dédié</a>
+ </div>
+ <div class="cta-duo">
+ <a class="btn btn-brun fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
+ <a class="btn btn-blanc" href="#contact" data-sujet="Activation ponctuelle">Décrire mon besoin</a>
+ </div>
+ </div>
+ <div class="ap-photo"><img src="assets/img/offre-activations.jpg" alt="Une fondatrice de Baghera, téléphone et magazine en main" loading="lazy"></div>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================= ÉQUIPE ================= -->
+ <div class="vue" id="v-equipe" data-vue="equipe" hidden>
+ <div class="wrap equipe-hero">
+ <div>
+ <span class="eyebrow">Notre équipe</span>
+ <h1 style="margin-top:16px">Trois parcours, <em class="s">une vision</em></h1>
+ <p class="lead" style="margin-top:24px">L’agence Baghera a été fondée par trois professionnelles aux parcours distincts, dont la complémentarité est notre principal atout. Ensemble, nous offrons une vision à 360° du secteur de l’influence.</p>
+ <p class="lead">Notre force repose sur l’équilibre entre trois piliers :</p>
+ <div class="piliers-3"><span class="chip">Développement commercial</span><span class="chip">Rigueur scientifique</span><span class="chip">Stratégie opérationnelle</span></div>
+ </div>
+ <div class="photo"><img src="assets/img/equipe-groupe.jpg" alt="Léa Canalis, Alix Espenel et Léa Pateras Pescara, fondatrices de Baghera" loading="lazy"></div>
+ </div>
+ <section style="padding-top:0">
+ <div class="wrap fondatrices">
+ <article class="fondatrice">
+ <div class="photo"><img src="assets/img/lea-canalis.jpg" alt="Léa Canalis" loading="lazy"></div>
+ <h3>Léa Canalis</h3>
+ <div class="role">Fondatrice · le pilier commercial</div>
+ <p>Forte de 8 ans d’expérience dans l’influence, Léa est le pilier commercial de Baghera. Entrepreneuse et extravertie, elle aime le contact humain et transformer chaque rencontre en opportunité. Elle élabore des stratégies d’influence créatives et sur-mesure.</p>
+ </article>
+ <article class="fondatrice">
+ <div class="photo"><img src="assets/img/alix-espenel.jpg" alt="Alix Espenel" loading="lazy"></div>
+ <h3>Alix Espenel</h3>
+ <div class="role">Fondatrice · le socle</div>
+ <p>Passionnée par l’influence et dotée de solides compétences en gestion de projet, Alix est le socle de Baghera. Structurée et stratégique, elle coordonne les projets tout en imaginant des campagnes créatives, alignées avec les tendances de l’influence.</p>
+ </article>
+ <article class="fondatrice">
+ <div class="photo"><img src="assets/img/lea-pateras.jpg" alt="Léa Pateras Pescara" loading="lazy"></div>
+ <h3>Léa Pateras Pescara</h3>
+ <div class="role">Fondatrice · l’expertise scientifique</div>
+ <p>Docteure en pharmacie et créatrice pionnière, Léa est l’expertise scientifique de Baghera. Son regard scientifique et sa maîtrise du digital guident chaque projet avec crédibilité, sens et impact. Elle élabore des recommandations adaptées à chaque marque et à chaque talent.</p>
+ </article>
+ </div>
+ </section>
+ </div>
+
+ <!-- ================= BLOG ================= -->
+ <div class="vue" id="v-blog" data-vue="blog" hidden>
+ <div class="wrap page-tete">
+ <span class="eyebrow">Le blog Baghera</span>
+ <h1 style="margin-top:16px">Coulisses & <em class="s">décryptages</em></h1>
+ <p class="lead">Nos projets racontés de l’intérieur, et nos convictions sur l’influence d’expertise.</p>
+ <div class="filtres" id="filtres-blog" role="group" aria-label="Filtrer les articles par catégorie"></div>
+ </div>
+ <div class="wrap"><div class="articles" id="articles"></div></div>
+ </div>
+
+ <!-- ================= ARTICLE ================= -->
+ <div class="vue" id="v-article" data-vue="article" hidden></div>
+
+ <!-- ================= MENTIONS LÉGALES ================= -->
+ <div class="vue" id="v-mentions" data-vue="mentions" hidden>
+ <div class="wrap mentions" style="padding-block:clamp(48px,7vw,96px)">
+ <span class="eyebrow">Informations</span>
+ <h1 style="margin-top:16px;font-size:clamp(2.2rem,5vw,3.6rem)">Mentions légales</h1>
+ <h2>1. Éditeur du site</h2>
+ <p>Le présent site est édité par BAGHERA, société par actions simplifiée (SAS), immatriculée au Registre du Commerce et des Sociétés de Toulouse sous le numéro 101067387. Siège social : 10 impasse du Clos de Marie, 31860 Villate – France. Email : bonjour@influencebaghera.com. Directrice de la publication : Léa Canalis.</p>
+ <h2>2. Hébergement</h2>
+ <p>[À compléter selon l’hébergeur du nouveau site.]</p>
+ <h2>3. Conditions d’utilisation</h2>
+ <p>L’utilisation du site implique l’acceptation pleine et entière des présentes mentions légales. Celles-ci peuvent être modifiées à tout moment ; les utilisateurs sont invités à les consulter régulièrement. Le site est normalement accessible à tout moment. Une interruption pour maintenance technique peut toutefois être décidée par l’Éditeur.</p>
+ <h2>4. Description des services</h2>
+ <p>Le site a pour objet de présenter les activités de Baghera, agence spécialisée dans le talent management et la stratégie d’influence. Les informations présentes sur le site sont fournies à titre indicatif et sont susceptibles d’évoluer.</p>
+ <h2>5. Propriété intellectuelle</h2>
+ <p>L’ensemble des contenus présents sur le site (textes, images, graphismes, logo, vidéos, éléments visuels, structure du site) est protégé par le Code de la propriété intellectuelle. Ces éléments sont la propriété exclusive de Baghera ou de ses partenaires. Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable. Toute exploitation non autorisée pourra être considérée comme constitutive d’une contrefaçon conformément aux articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+ <h2>6. Responsabilité</h2>
+ <p>L’Éditeur s’efforce de fournir sur le site des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, inexactitudes ou carences dans la mise à jour des informations. L’utilisateur s’engage à accéder au site avec un matériel récent, ne contenant pas de virus et avec un navigateur à jour.</p>
+ <h2>7. Données personnelles</h2>
+ <p>Les données personnelles collectées via le site (formulaire de contact, inscription newsletter, etc.) sont traitées conformément au Règlement Général sur la Protection des Données (RGPD). Ces données sont utilisées uniquement pour répondre aux demandes des utilisateurs, gérer les échanges avec les prospects et partenaires, et améliorer les services proposés. Elles ne sont ni vendues ni cédées à des tiers.</p>
+ <p style="margin-top:1em">Conformément à la réglementation en vigueur, l’utilisateur dispose d’un droit d’accès, de rectification, de suppression, d’opposition et de portabilité, qu’il peut exercer en écrivant à bonjour@influencebaghera.com. En cas de litige, l’utilisateur peut introduire une réclamation auprès de la CNIL (www.cnil.fr).</p>
+ <h2>8. Cookies</h2>
+ <p>Le site peut utiliser des cookies afin d’améliorer l’expérience utilisateur, de mesurer l’audience du site et d’assurer le bon fonctionnement des services. L’utilisateur peut accepter, refuser ou modifier ses préférences via les paramètres de son navigateur.</p>
+ <h2>9. Liens hypertextes</h2>
+ <p>Le site peut contenir des liens vers d’autres sites internet. Baghera ne peut être tenue responsable du contenu de ces sites tiers.</p>
+ <h2>10. Droit applicable</h2>
+ <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux compétents seront ceux du ressort du siège social de la société.</p>
+ </div>
+ </div>
+
+ <!-- ================= CONTACT (sur toutes les pages) ================= -->
+ <section class="contact" id="contact" aria-labelledby="t-contact">
+ <div class="wrap">
+ <div class="intro">
+ <span class="eyebrow">Contact</span>
+ <h2 id="t-contact" style="margin-top:12px">Un projet d’influence <em class="s">ou une question ?</em></h2>
+ <p>Nous serions ravies d’échanger avec vous. Remplissez le formulaire ou écrivez-nous directement : notre équipe vous répond dans les plus brefs délais pour imaginer ensemble vos prochaines collaborations.</p>
+ <div class="email"><span id="email-agence">bonjour@influencebaghera.com</span><button class="copier" type="button" data-copier="bonjour@influencebaghera.com">Copier</button></div>
+ <div class="rdv-bloc">
+ <p>Vous préférez en parler de vive voix ? Réservez directement un créneau avec l’équipe.</p>
+ <a class="btn btn-orange fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
+ </div>
+ </div>
+ <form class="formulaire" id="formulaire" novalidate>
+ <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden">
+ <fieldset class="champ plein profil">
+ <legend>Vous êtes *</legend>
+ <div class="profil-choix">
+ <input type="radio" id="f-profil-marque" name="profil" value="marque" checked><label for="f-profil-marque">Une marque</label>
+ <input type="radio" id="f-profil-createur" name="profil" value="createur"><label for="f-profil-createur">Un·e créateur·rice</label>
+ </div>
+ </fieldset>
+ <div class="champ"><label for="f-nom">Votre nom *</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+ <div class="champ"><label for="f-societe" id="l-societe">Votre société</label><input id="f-societe" name="societe" autocomplete="organization"></div>
+ <div class="champ"><label for="f-email">Votre e-mail *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+ <div class="champ"><label for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+ <div class="champ plein"><label for="f-sujet">Sujet *</label>
+ <select id="f-sujet" name="sujet" required>
+ <option value="">Choisissez…</option>
+ <option>Activer un de vos talents</option>
+ <option>Accompagnement stratégique</option>
+ <option>Activation ponctuelle</option>
+ <option>Rejoindre l’agence</option>
+ <option>Autre question</option>
+ </select>
+ </div>
+ <div class="champ plein"><label for="f-message">Votre message *</label><textarea id="f-message" name="message" required></textarea></div>
+ <div class="envoyer">
+ <button class="btn btn-orange fleche" type="submit">Envoyer</button>
+ <span class="retour-form" id="retour-form" role="status"></span>
+ </div>
+ </form>
+ </div>
+ </section>
+</main>
+
+<a class="rdv-flottant" id="rdv-flottant" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener" hidden><span class="point" aria-hidden="true"></span>Prendre RDV</a>
+
+<footer class="pied">
+ <div class="wrap">
+ <img class="logo-img" src="assets/img/logo-baghera.png" alt="Baghera Influence" width="300" height="120">
+ <nav aria-label="Liens de pied de page">
+ <a href="#projets">Projets</a>
+ <a href="#createurs">Créateurs</a>
+ <a href="#accompagner">Accompagner</a>
+ <a href="#equipe">Équipe</a>
+ <a href="#blog">Blog</a>
+ <a href="https://www.instagram.com/agencebaghera/" target="_blank" rel="noopener">Instagram ↗</a>
+ <a href="#mentions">Mentions légales</a>
+ </nav>
+ <small>© 2026 Baghera · Toulouse | Aix-en-Provence</small>
+ </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/articles.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
