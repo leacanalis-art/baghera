@@ -140,7 +140,7 @@ em.s{
   padding-block:14px;
   gap:16px;
 }
-.logo img{height:38px;width:auto}
+.logo img{height:42px;width:auto;border-radius:9px}
 .burger{
   display:flex;align-items:center;gap:.6em;
   padding:.5em .8em;border-radius:99px;
@@ -515,7 +515,7 @@ fieldset{border:none;padding:0;margin:0}
 /* ---------- pied de page ---------- */
 .pied{padding-block:56px 40px;border-top:1px solid var(--ligne)}
 .pied .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
-.pied img{height:30px}
+.pied img{height:44px;width:auto;border-radius:8px}
 .pied nav{display:flex;flex-wrap:wrap;gap:20px;font-size:.85rem;font-weight:600}
 .pied nav a:hover{color:var(--orange)}
 .pied small{width:100%;color:var(--brun-clair);font-size:.78rem}
