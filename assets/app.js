@@ -163,7 +163,7 @@
   /* Liste répétée pour que la bande tourne sans trou et que les 3 couleurs s'enchaînent sans rupture */
   var serie = AVIS.slice();
   while (AVIS.length && (serie.length % 3 !== 0 || serie.length < 9)) serie = serie.concat(AVIS);
-  $("#avis-grille").innerHTML = serie.map(function (a) { return avisHTML(a, false); }).join("") +
+  if ($("#avis-grille")) $("#avis-grille").innerHTML = serie.map(function (a) { return avisHTML(a, false); }).join("") +
     serie.map(function (a) { return avisHTML(a, true); }).join("");
 
   /* ---------- Talents ---------- */
