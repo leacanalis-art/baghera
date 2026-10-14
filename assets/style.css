@@ -871,3 +871,9 @@ fieldset.profil legend { font: 600 .78rem var(--f-display); letter-spacing: .06e
 .avis .avis-carte:nth-child(3n) { background: var(--creme); color: var(--encre); border-color: var(--ligne); }
 .avis .avis-carte:nth-child(3n) figcaption b { color: var(--brun); }
 .avis .avis-carte:nth-child(3n) .guillemet { color: var(--orange); }
+
+/* Fiches talents : texte normal, passages importants en gras (noir puis orange en alternance) */
+.fiche-talent .bio p:first-child, .fiche-talent .bio p:nth-child(2), .fiche-talent .bio p:nth-child(n+3) { font: 400 1.05rem/1.7 var(--f-texte); letter-spacing: 0; color: var(--encre); }
+.fiche-talent .bio strong { font-weight: 800; font-family: var(--f-display); }
+.fiche-talent .bio strong.n { color: var(--nuit); }
+.fiche-talent .bio strong.o { color: var(--orange); }

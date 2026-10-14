@@ -53,7 +53,7 @@
   /* ---------- Savoir-faire : carrés qui défilent ---------- */
   var CARRES = [
     ["Réels & posts", "Le conseil <em>en 60 secondes</em>", "Des contenus courts et pédagogiques, pensés pour être partagés et sauvegardés.", "assets/img/formats/reels.jpg", "70% 25%"],
-    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à une créatrice passionnée.", "assets/img/formats/youtube.jpg", "35% 40%"],
+    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à une créatrice experte.", "assets/img/formats/youtube.jpg", "35% 40%"],
     ["Podcasts", "La parole <em>de passionnée</em>", "Des épisodes qui installent la marque dans la durée.", "assets/img/formats/podcasts.jpg", "50% 30%"],
     ["Tournages", "Au cœur <em>du terrain</em>", "En pharmacie, en laboratoire ou dans les coulisses d’une marque.", "assets/img/formats/tournages.jpg", "60% 35%"],
     ["Conférences", "Ateliers <em>& webinars</em>", "Créer de la proximité et de la crédibilité, en présentiel ou en ligne.", "assets/img/formats/conferences.jpg", "50% 25%"],
@@ -229,7 +229,12 @@
       '<div><span class="eyebrow">@' + esc(t.handle) + '</span>' +
       '<h1 style="margin-top:12px">' + esc(t.nom) + '</h1><div class="exp">' + esc(t.expertise) + '</div>' +
       '<div class="reseaux">' + t.reseaux.map(function (r) { return '<a href="' + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + '</a>'; }).join("") + '</div>' +
-      '<div class="bio">' + t.bio.map(function (b) { return "<p>" + esc(b) + "</p>"; }).join("") + '</div>' +
+      '<div class="bio">' + (function () {
+        var k = 0; /* les passages entre ** alternent gras noir / gras orange */
+        return t.bio.map(function (b) {
+          return "<p>" + esc(b).replace(/\*\*(.+?)\*\*/g, function (_, m) { return '<strong class="' + (k++ % 2 ? "o" : "n") + '">' + m + "</strong>"; }) + "</p>";
+        }).join("");
+      })() + '</div>' +
       activationsHTML(t) + galerieHTML(t) +
       '<div class="collab"><h3>Vous souhaitez collaborer avec ' + esc(t.court) + ' ?</h3>' +
       '<p>Échangeons sur vos projets et vos valeurs pour concevoir ensemble des prises de parole fortes, qui valorisent votre marque avec authenticité et crédibilité.</p>' +

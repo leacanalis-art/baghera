@@ -141,7 +141,7 @@ window.BAGHERA_PROJETS = [
     ],
     pourquoi: [
       ["Une mise en situation crédible", "Un vrai chantier, une vraie poussière : le produit fait ses preuves devant la communauté."],
-      ["Une passionnée de l’habitat", "Investisseuse immobilière, Allison vit les travaux au quotidien : son avis a du poids."],
+      ["Une experte de l’habitat", "Investisseuse immobilière, Allison vit les travaux au quotidien : son avis a du poids."],
       ["Un produit adopté", "Le Pencilvac s’installe dans sa nouvelle maison, bien au-delà de la collaboration."]
     ]
   },
@@ -248,9 +248,9 @@ window.BAGHERA_TALENTS = [
     handle: "les.conseils.pharma.de.lea",
     email: "lesconseilspharmadelea@influencebaghera.com",
     bio: [
-      "Docteure en pharmacie et pionnière de la création de contenu santé en France, Léa est devenue une référence incontournable sous le nom de @Les Conseils Pharma de Léa. Reconnue pour sa prise de parole accessible et responsable, elle s’est imposée comme une voix de confiance, auprès du grand public comme des professionnels de santé.",
-      "Spécialiste de la santé naturelle, elle est formatrice en micronutrition, titulaire d’un DU MAPS (Micro-nutrition Alimentation Prévention Santé) et d’un DU d’homéopathie. Auteure d’un ouvrage de référence décliné en livret pratique, elle met son savoir scientifique au service d’une approche pédagogique et concrète.",
-      "Installée à Aix-en-Provence et maman de trois filles, Léa fédère une communauté engagée à l’échelle nationale et locale. Sa rigueur et son éthique la conduisent à collaborer exclusivement avec des marques premium."
+      "Docteure en pharmacie et **pionnière de la création de contenu santé en France**, Léa est devenue une référence incontournable sous le nom de @Les Conseils Pharma de Léa. Reconnue pour sa prise de parole accessible et responsable, elle s’est imposée comme **une voix de confiance**, auprès du grand public comme des professionnels de santé.",
+      "Spécialiste de la santé naturelle, elle est **formatrice en micronutrition**, titulaire d’un DU MAPS (Micro-nutrition Alimentation Prévention Santé) et d’un DU d’homéopathie. Auteure d’un ouvrage de référence décliné en livret pratique, elle met son savoir scientifique au service d’**une approche pédagogique et concrète**.",
+      "Installée à Aix-en-Provence et maman de trois filles, Léa fédère une communauté engagée à l’échelle nationale et locale. Sa rigueur et son éthique la conduisent à **collaborer exclusivement avec des marques premium**."
     ],
     references: "SkinCeuticals · Filorga · Fortepharma · Vichy · Easypara · Pileje · Organyc · Aroma-Zone · Arkopharma · HAS · Bepanthen · Calmosine · Jonzac · Sanofi · Laboratoire ACM · CPAM · Jaldes · Caudalie",
     galerie: ["assets/img/gal-lea-1.jpg"],
@@ -270,9 +270,9 @@ window.BAGHERA_TALENTS = [
     handle: "emturian",
     email: "emturian@influencebaghera.com",
     bio: [
-      "@Emturian est une créatrice de contenu passionnée par la beauté responsable, naturelle et accessible. Elle a lancé son compte pour créer un espace de tips, de conseils et de dupes de produits clean et abordables. Elle fédère aujourd’hui plus de 400 000 abonnés.",
-      "Spécialisée dans la beauté clean, Emeline adopte une approche bienveillante et non moralisatrice, avec un objectif simple : aider sa communauté à faire les meilleurs choix, quand c’est possible.",
-      "Elle met en lumière les marques, des plus petites aux plus grandes, notamment à travers son concept d’interviews de marques sur YouTube. Son univers s’étend aujourd’hui à la food, au textile et au lifestyle, avec la beauté comme fil conducteur."
+      "@Emturian est une créatrice de contenu engagée pour **la beauté responsable, naturelle et accessible**. Elle a lancé son compte pour créer un espace de tips, de conseils et de dupes de produits clean et abordables. Elle fédère aujourd’hui **plus de 400 000 abonnés**.",
+      "Spécialisée dans la beauté clean, Emeline adopte **une approche bienveillante et non moralisatrice**, avec un objectif simple : aider sa communauté à faire les meilleurs choix, quand c’est possible.",
+      "Elle met en lumière les marques, des plus petites aux plus grandes, notamment à travers son concept d’**interviews de marques sur YouTube**. Son univers s’étend aujourd’hui à la food, au textile et au lifestyle, avec la beauté comme fil conducteur."
     ],
     references: "Soraali · Aroma-Zone · Yepoda · Jow · Cosmebio · Respire · Wild · Oden · Cultiv · Cica Manuka · Cut by Fred · Jonzac · Respectueuse · Melvita · Kreme · Sanoflore · Ballot-Flurin · WIA Cosmetics",
     activations: ["Réels Instagram et TikTok", "Vidéos YouTube, interviews de marque", "Partenariat à l’année", "Lives Twitch", "Comparatifs et dupes"],
@@ -292,9 +292,9 @@ window.BAGHERA_TALENTS = [
     handle: "claramorgane",
     email: "alix.espenel@influencebaghera.com",
     bio: [
-      "Clara Morgane est une personnalité incontournable du paysage médiatique français, artiste polyvalente et entrepreneure audacieuse. Depuis plus de vingt ans, elle inspire le public par ses projets créatifs, ses apparitions télévisées et ses engagements artistiques.",
-      "Elle s’impose comme une voix influente sur les thèmes liés à la femme, à la créativité et au bien-être. Sur Instagram, où elle compte plus de 700 000 abonnés, elle met en lumière ses initiatives autour de la spiritualité, du bien-être, de la beauté et de l’émancipation féminine.",
-      "Avec son cabaret « Au 7e », elle célèbre la féminité et l’expression artistique entre danse, acrobaties, effeuillage burlesque et humour — une nouvelle preuve de sa capacité à allier créativité, scène et rayonnement médiatique."
+      "Clara Morgane est **une personnalité incontournable du paysage médiatique français**, artiste polyvalente et entrepreneure audacieuse. Depuis plus de vingt ans, elle inspire le public par ses projets créatifs, ses apparitions télévisées et ses engagements artistiques.",
+      "Elle s’impose comme une voix influente sur les thèmes liés à la femme, à la créativité et au bien-être. Sur Instagram, où elle compte **plus de 700 000 abonnés**, elle met en lumière ses initiatives autour de la spiritualité, du bien-être, de la beauté et de l’émancipation féminine.",
+      "Avec son **cabaret « Au 7e »**, elle célèbre la féminité et l’expression artistique entre danse, acrobaties, effeuillage burlesque et humour — une nouvelle preuve de sa capacité à allier créativité, scène et rayonnement médiatique."
     ],
     references: "",
     activations: ["Posts et stories Instagram", "Interviews et prises de parole médias", "Événements et soirées", "Partenariats beauté et bien-être"],
@@ -315,9 +315,9 @@ window.BAGHERA_TALENTS = [
     handle: "allisonjungling",
     email: "allisonjungling@influencebaghera.com",
     bio: [
-      "Allison Jungling est investisseuse immobilière, entrepreneure et formatrice, reconnue pour son approche accessible et concrète de l’investissement. Partie de zéro, elle a construit son indépendance financière grâce à l’immobilier et est devenue une référence féminine du domaine.",
-      "Autrice de deux ouvrages, « Mes 68 commandements pour vivre de l’immobilier » et « Tout ce que j’aurais aimé savoir », elle transmet à la fois des conseils pratiques et une vision plus personnelle de la réussite.",
-      "Chroniqueuse et conférencière, elle décrypte régulièrement les tendances du marché immobilier. Pédagogue, transparente et authentique, elle crée un lien de confiance durable avec une communauté en quête de conseils concrets."
+      "Allison Jungling est investisseuse immobilière, entrepreneure et formatrice, reconnue pour son approche accessible et concrète de l’investissement. **Partie de zéro**, elle a construit son indépendance financière grâce à l’immobilier et est devenue **une référence féminine du domaine**.",
+      "**Autrice de deux ouvrages**, « Mes 68 commandements pour vivre de l’immobilier » et « Tout ce que j’aurais aimé savoir », elle transmet à la fois des conseils pratiques et une vision plus personnelle de la réussite.",
+      "Chroniqueuse et conférencière, elle décrypte régulièrement les tendances du marché immobilier. **Pédagogue, transparente et authentique**, elle crée un lien de confiance durable avec une communauté en quête de conseils concrets."
     ],
     references: "",
     activations: ["Podcasts et émissions", "Conférences et chroniques", "Réels Instagram et vidéos YouTube", "Contenus immobilier et finance"],
@@ -336,9 +336,9 @@ window.BAGHERA_TALENTS = [
     handle: "skintelligence_sj",
     email: "skintelligence@influencebaghera.com",
     bio: [
-      "Sarah-Joyce est passionnée de dermocosmétique et consultante indépendante. Ingénieure en biotechnologie de formation, elle s’est orientée vers l’univers pharmaceutique, comme consultante auprès des plus grands laboratoires et sur le terrain, en pharmacie. Ce parcours hybride lui donne une lecture unique de la peau et des actifs.",
-      "Avec Skintelligence, elle décrypte la peau avec précision et propose une approche du soin claire, moderne et accessible : exigeante mais réaliste, fondée sur la science et l’efficacité réelle.",
-      "Au-delà du digital, elle intervient régulièrement comme animatrice, formatrice et conférencière pour des marques et des laboratoires. À mi-chemin entre la rigueur scientifique et la complicité de l’amie."
+      "Sarah-Joyce est experte en dermocosmétique et consultante indépendante. Ingénieure en biotechnologie de formation, elle s’est orientée vers l’univers pharmaceutique, comme consultante auprès des plus grands laboratoires et sur le terrain, en pharmacie. Ce **parcours hybride** lui donne une lecture unique de la peau et des actifs.",
+      "Avec Skintelligence, elle décrypte la peau avec précision et propose une approche du soin claire, moderne et accessible : exigeante mais réaliste, **fondée sur la science et l’efficacité réelle**.",
+      "Au-delà du digital, elle intervient régulièrement comme **animatrice, formatrice et conférencière** pour des marques et des laboratoires. À mi-chemin entre la rigueur scientifique et la complicité de l’amie."
     ],
     references: "",
     activations: ["Réels en pharmacie", "Animations et conférences pour marques et laboratoires", "Formations dermocosmétique", "Contenus soin de la peau"],
@@ -356,9 +356,9 @@ window.BAGHERA_TALENTS = [
     handle: "nina.lsy",
     email: "nina.lsy@influencebaghera.com",
     bio: [
-      "Nina est diététicienne, coach sportive et créatrice de contenu, animée par une vraie passion pour l’accompagnement et la transmission. Elle aide sa communauté à améliorer son hygiène de vie grâce à des conseils concrets et faciles à appliquer, autour de la nutrition, du sport, du lifestyle et du développement personnel.",
+      "Nina est **diététicienne, coach sportive et créatrice de contenu**, animée par un véritable engagement pour l’accompagnement et la transmission. Elle aide sa communauté à améliorer son hygiène de vie grâce à **des conseils concrets et faciles à appliquer**, autour de la nutrition, du sport, du lifestyle et du développement personnel.",
       "Elle applique elle-même les principes qu’elle partage, pour rester cohérente entre son discours et son mode de vie. Dynamique et curieuse, elle place la nouveauté et le dépassement de soi au centre de son approche.",
-      "Son statut de diététicienne diplômée fait de chaque collaboration un gage de crédibilité : une parole légitime, justement intégrée, pour une communauté exigeante."
+      "Son statut de diététicienne diplômée fait de chaque collaboration **un gage de crédibilité** : **une parole légitime**, justement intégrée, pour une communauté exigeante."
     ],
     references: "",
     galerie: ["assets/img/gal-nina-1.jpg", "assets/img/gal-nina-2.jpg"],
