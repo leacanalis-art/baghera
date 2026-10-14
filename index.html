@@ -460,7 +460,8 @@
           <a class="btn btn-orange fleche" href="https://calendar.google.com/appointments/schedules/AcZssZ3wr56gAHHlQ9lYKhecLk3dZM8wu3Itv3OhEKW_VFvJ0YhseNA4_Kt7mjPV7Grl7n6jU2ZC2Q9T" data-rdv target="_blank" rel="noopener">Prendre rendez-vous</a>
         </div>
       </div>
-      <form class="formulaire" id="formulaire" novalidate>
+      <form class="formulaire" id="formulaire" name="contact" method="POST" data-netlify="true" netlify-honeypot="_honey" novalidate>
+        <input type="hidden" name="form-name" value="contact">
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden">
         <fieldset class="champ plein profil">
           <legend>Vous êtes *</legend>
