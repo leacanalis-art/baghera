@@ -215,6 +215,7 @@ window.BAGHERA_PROJETS = [
   },
   {
     id: "solgar-kristy",
+    masque: true, /* collab avec Kristy, masquée avec elle */
     marque: "Solgar",
     talent: "kristy",
     categories: ["Micronutrition"],
@@ -369,6 +370,7 @@ window.BAGHERA_TALENTS = [
   },
   {
     id: "kristy",
+    masque: true, /* contrat non signé : retirer cette ligne pour réafficher */
     nom: "Kristy Bianco",
     court: "Kristy",
     expertise: "Conseillère en pharmacie",
@@ -389,6 +391,7 @@ window.BAGHERA_TALENTS = [
   },
   {
     id: "nastassja",
+    masque: true, /* contrat non signé : retirer cette ligne pour réafficher */
     nom: "Nastassja",
     court: "Nastassja",
     expertise: "Conseillère en image",

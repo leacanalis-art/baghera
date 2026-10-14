@@ -2,8 +2,8 @@
 (function () {
   "use strict";
 
-  var PROJETS = window.BAGHERA_PROJETS || [];
-  var TALENTS = (window.BAGHERA_TALENTS || []).slice();
+  var PROJETS = (window.BAGHERA_PROJETS || []).filter(function (p) { return !p.masque; });
+  var TALENTS = (window.BAGHERA_TALENTS || []).filter(function (t) { return !t.masque; });
   (function () {
     var o = window.BAGHERA_ORDRE_TALENTS || [];
     TALENTS.sort(function (a, b) { var i = o.indexOf(a.id), k = o.indexOf(b.id); return (i < 0 ? 99 : i) - (k < 0 ? 99 : k); });
