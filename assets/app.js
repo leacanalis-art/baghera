@@ -374,11 +374,21 @@
     var bouton = f.querySelector('button[type="submit"]');
     bouton.disabled = true;
     retour.textContent = "Envoi en cours…";
-    fetch(window.BAGHERA_FORMULAIRE, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(donnees)
-    }).then(function (r) {
+    /* 1) Netlify Forms (quand le site est hébergé sur Netlify) ; 2) sinon FormSubmit en secours */
+    var corps = new URLSearchParams({
+      "form-name": "contact", profil: f.elements.profil.value, nom: donnees.Nom, societe: donnees["Société / compte"],
+      email: donnees.email, tel: donnees["Téléphone"], sujet: donnees.Sujet, message: donnees.Message
+    }).toString();
+    var viaFormSubmit = function () {
+      return fetch(window.BAGHERA_FORMULAIRE, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(donnees)
+      });
+    };
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: corps })
+      .then(function (r) { return r.ok ? r : viaFormSubmit(); }, viaFormSubmit)
+      .then(function (r) {
       if (!r.ok) throw new Error("envoi");
       retour.textContent = "Merci ! Votre message a bien été envoyé. Nous vous répondons très vite.";
       f.reset();
