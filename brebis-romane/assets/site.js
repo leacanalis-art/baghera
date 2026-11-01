@@ -11,7 +11,8 @@
 
   var links = pages.map(function (p) {
     var cls = p[0] === current ? ' aria-current="page"' : "";
-    return '<a href="' + p[0] + '"' + cls + ">" + p[1] + "</a>";
+    var c = p[0] === "eleveurs.html" ? ' class="cta"' : "";
+    return '<a href="' + p[0] + '"' + cls + c + ">" + p[1] + "</a>";
   }).join("");
 
   var header = document.getElementById("site-header");

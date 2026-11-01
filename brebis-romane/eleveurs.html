@@ -19,8 +19,8 @@
       <div class="mapbox">
         <div id="map" aria-label="Carte des régions de France"></div>
         <div class="legend">
-          <span><i style="background:#8fb286"></i>Éleveurs présents</span>
-          <span><i style="background:#cfdcca"></i>Pas encore d'éleveur</span>
+          <span><i style="background:#9ccb4a"></i>Éleveurs présents</span>
+          <span><i style="background:#fff"></i>Pas encore d'éleveur</span>
         </div>
       </div>
 
@@ -64,7 +64,27 @@
     p.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pick(r.id); } });
     svg.appendChild(p);
   });
+  
   document.getElementById("map").appendChild(svg);
+  var placed = false;
+  function placeBubbles() {
+    if (placed) return;
+    var any = false;
+    svg.querySelectorAll(".region.has").forEach(function (p) {
+      var bb = p.getBBox(), n = counts[p.dataset.id];
+      if (!bb.width) return;
+      any = true;
+      var c = document.createElementNS(NS, "circle"), t = document.createElementNS(NS, "text");
+      c.setAttribute("cx", bb.x + bb.width / 2); c.setAttribute("cy", bb.y + bb.height / 2); c.setAttribute("r", 13); c.setAttribute("class", "bulle");
+      c.dataset.id = p.dataset.id;
+      t.setAttribute("x", bb.x + bb.width / 2); t.setAttribute("y", bb.y + bb.height / 2); t.setAttribute("class", "bulle-t"); t.textContent = n;
+      svg.appendChild(c); svg.appendChild(t);
+    });
+    placed = any;
+    if (any) render();
+  }
+  placeBubbles();
+  window.addEventListener("hashchange", placeBubbles); window.addEventListener("viewshown", placeBubbles);
 
   var reg = document.getElementById("reg");
   reg.innerHTML = '<option value="">Toute la France</option>' + M.regions.map(function (r) {
@@ -79,7 +99,7 @@
 
   function render() {
     var q = document.getElementById("q").value.trim().toLowerCase();
-    svg.querySelectorAll(".region").forEach(function (p) { p.classList.toggle("active", p.dataset.id === sel); });
+    svg.querySelectorAll(".region,.bulle").forEach(function (p) { p.classList.toggle("active", p.dataset.id === sel); });
     var list = E.filter(function (e) {
       if (sel && e.region !== sel) return false;
       if (!q) return true;
