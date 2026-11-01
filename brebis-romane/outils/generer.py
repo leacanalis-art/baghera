@@ -83,10 +83,34 @@ def deux(gauche, droite, inverse=False):
     return f'<div class="deux"><div class="prose">{gauche}</div><div>{droite}</div></div>'
 
 
+ICONES = {
+    "livre": '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5"/><path d="M9 8h6"/>',
+    "panier": '<path d="M3 4h2l2.4 11h10.2l2-8H6.2"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/>',
+    "outils": '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+    "fichier": '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
+    "graphique": '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    "courrier": '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+    "carte": '<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+}
+
+
+def icone(nom):
+    return f'<span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">{ICONES[nom]}</svg></span>'
+
+
+def fiche(pdf, vignette, titre, desc):
+    return (f'<a class="fiche" href="assets/docs/{pdf}" target="_blank" rel="noopener">{img(vignette, titre)}'
+            f'<div><h3>{titre}</h3><p>{desc}</p><span class="btn">Télécharger le PDF ({taille(pdf)})</span></div></a>')
+
+
 def cartes(*items):
     return '<div class="grid trois">' + "".join(
-        f'<a class="card lien" href="{h}"><h3>{t}</h3><p>{d}</p><span class="fleche">Voir →</span></a>' for h, t, d in items) + "</div>"
+        f'<a class="card lien" href="{x[0]}">{icone(x[3]) if len(x) > 3 else ""}<h3>{x[1]}</h3><p>{x[2]}</p><span class="fleche">Voir →</span></a>' for x in items) + "</div>"
 
+
+FICHES = (
+    fiche("Recto-verso-race---version-tech-v2.pdf", "fiche-race.jpg", "La race Romane", "Fiche de présentation avec comparatif aux autres races.") +
+    fiche("Recto-verso-F1-v2.pdf", "fiche-f1.jpg", "La F1 Romane", "Brebis croisée Romane × race bouchère : origine, qualités, performances."))
 
 # ---------------------------------------------------------------- LA ROMANE
 page("romane.html", "La Romane", "La Romane", "Brebis productive et maternelle", "\n".join([
@@ -110,9 +134,8 @@ page("romane.html", "La Romane", "La Romane", "Brebis productive et maternelle",
 <p>La production de viande ovine nationale doit et devra sa survie à quelques éléments majeurs :</p>
 <ul class="liste"><li>Une qualité irréprochable</li><li>La sécurité</li><li>Une production d'agneaux régulière sur l'année</li><li>Un prix accessible au consommateur</li></ul>
 <p>La race ovine Romane s'inscrit complètement dans cette démarche. Elle offre aux éleveurs un « support femelle » correspondant aux besoins de la filière : une brebis productive, facile à élever, suffisamment rustique pour s'adapter à tous les types d'élevages et de milieux. Par un croisement terminal avec des béliers qualifiés améliorateurs bouchers, elle permet de produire des agneaux labellisables à toutes périodes de l'année.</p>
-<h3 style="margin-top:2rem">Les fiches de présentation</h3>""" + docs(
-        ("Recto-verso-race---version-tech-v2.pdf", "Fiche de présentation de la race Romane", "Avec comparatif aux autres races"),
-        ("Recto-verso-F1-v2.pdf", "Fiche de présentation de la F1 Romane", "Brebis croisée Romane × race bouchère")), etroit=True),
+</div></section>
+  <section class="alt"><div class="wrap"><h2>Les fiches de présentation</h2><div class="fiches">""" + FICHES + "</div>", ),
 ]))
 
 page("histoire.html", "Son histoire", "L'histoire de la Romane", "Une aventure née à l'INRAe, portée par les éleveurs", "\n".join([
@@ -248,9 +271,9 @@ page("selection.html", "Le schéma de sélection", "Le schéma de sélection", "
 <p>L'objectif est d'obtenir des animaux rentables, faciles à élever, capables de s'adapter à tous les systèmes de production grâce à leur rusticité.</p>
 <p>Les stations de contrôle sont le pivot de ce travail. Aujourd'hui, nous bénéficions en plus des apports des techniques de génomique, et nous travaillons en plus la résistance aux parasites gastro-intestinaux.</p>""" + docs(("Recto-verso-schema-V2.pdf", "Présentation du schéma Romane")), fig("sci-01.jpg", "Béliers en station de contrôle"))),
     sec('<h2>Les quatre piliers</h2>' + cartes(
-        ("sci.html", "Les stations de contrôle (SCI)", "Près de 500 béliers évalués chaque année, dans les mêmes conditions."),
-        ("cpo.html", "Le contrôle de performance (CPO)", "« On ne peut améliorer que ce que l'on mesure. »"),
-        ("cia.html", "Le centre d'insémination (CIA)", "De la semence de l'élite de la race, toute l'année, dans toute la France.")), alt=True),
+        ("sci.html", "Les stations de contrôle (SCI)", "Près de 500 béliers évalués chaque année, dans les mêmes conditions.", "carte"),
+        ("cpo.html", "Le contrôle de performance (CPO)", "« On ne peut améliorer que ce que l'on mesure. »", "graphique"),
+        ("cia.html", "Le centre d'insémination (CIA)", "De la semence de l'élite de la race, toute l'année, dans toute la France.", "outils")), alt=True),
     sec("""<h2 id="projets">Les projets</h2>
 <p>L'OS Romane participe à plusieurs projets de la filière. Nous sommes toujours en veille sur les améliorations à apporter à notre schéma de sélection et sur les nouveaux caractères à évaluer, dans l'optique de faire évoluer notre race au service des éleveurs.</p>
 <p>L'OS Romane poursuit le travail sur le programme <b>OSIRIS</b> (Objectifs de Sélection Innovants en Ruminants et Indices de Synthèse). Son objectif est de fournir un outil d'aide à la décision, qui permettra aux Organismes de Sélection de définir les orientations de leurs races en se basant sur les valeurs économiques des caractères.</p>
@@ -527,12 +550,12 @@ accueil = f'''<!doctype html>
     <div class="wrap">
       <h2>Que cherchez-vous&nbsp;?</h2>
       {cartes(
-        ("romane.html", "Découvrir la race", "Son histoire, ses qualités, ses performances et la F1."),
-        ("vente.html", "Acheter des reproducteurs", "Agnelles, béliers, insémination, et la carte des éleveurs."),
-        ("conseils.html", "Conseils d'élevage", "Lutte, agnelles, allaitement artificiel."),
-        ("documents.html", "Documents à télécharger", "Fiches, rapports d'activité, résultats et newsletters."),
-        ("selection.html", "La sélection", "Stations de contrôle, contrôle de performance, insémination."),
-        ("contact.html", "Nous contacter", "Une question ou un projet d'élevage : l'équipe vous répond."))}
+        ("romane.html", "Découvrir la race", "Son histoire, ses qualités, ses performances et la F1.", "livre"),
+        ("vente.html", "Acheter des reproducteurs", "Agnelles, béliers, insémination, et la carte des éleveurs.", "panier"),
+        ("conseils.html", "Conseils d'élevage", "Lutte, agnelles, allaitement artificiel.", "outils"),
+        ("documents.html", "Documents à télécharger", "Fiches, rapports d'activité, résultats et newsletters.", "fichier"),
+        ("selection.html", "La sélection", "Stations de contrôle, contrôle de performance, insémination.", "graphique"),
+        ("contact.html", "Nous contacter", "Une question ou un projet d'élevage : l'équipe vous répond.", "courrier"))}
     </div>
   </section>
 
@@ -559,6 +582,15 @@ accueil = f'''<!doctype html>
   </section>
 
   <section class="alt">
+    <div class="wrap">
+      <p class="eyebrow">À télécharger</p>
+      <h2>Les fiches de présentation</h2>
+      <div class="fiches">{FICHES}</div>
+      <p style="margin-top:1.5rem"><a class="btn second" href="documents.html">Tous les documents à télécharger</a></p>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap">
       <h2>La Romane en images</h2>
       {galerie("accueil", 1, 12, "Brebis Romane")}

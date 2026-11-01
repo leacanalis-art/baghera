@@ -14,3 +14,6 @@ Site statique : ouvrir `index.html`, aucune installation nécessaire.
 
 ## Crédits
 Contenu, photos et documents : site d'origine brebis-romane.com (OS Romane). Carte des régions : `@svg-maps/france.regions` (CC BY-NC 4.0, attribution requise).
+
+## Réseaux sociaux
+Adresses dans `assets/site.js` (en haut du fichier). **Instagram : adresse à remplacer** par celle du compte de l'OS Romane.
