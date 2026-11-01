@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouver un éleveur — Brebis Romane</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <div class="page-title"><div class="wrap">
+    <h1>Trouver un éleveur</h1>
+    <p>Cliquez sur votre région pour voir les éleveurs de brebis Romane.</p>
+  </div></div>
+
+  <section>
+    <div class="wrap finder">
+      <div class="mapbox">
+        <div id="map" aria-label="Carte des régions de France"></div>
+        <div class="legend">
+          <span><i style="background:#8fb286"></i>Éleveurs présents</span>
+          <span><i style="background:#cfdcca"></i>Pas encore d'éleveur</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="tools">
+          <input id="q" type="search" placeholder="Rechercher (nom, commune…)" aria-label="Rechercher un éleveur">
+          <select id="reg" aria-label="Choisir une région"></select>
+        </div>
+        <div class="results-head">
+          <h2 id="title">Tous les éleveurs</h2>
+          <button class="link-btn" id="reset" hidden>Voir toute la France</button>
+        </div>
+        <div id="list" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/map-data.js"></script>
+<script src="assets/eleveurs.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var M = window.FRANCE_MAP, E = window.ELEVEURS, sel = "", NS = "http://www.w3.org/2000/svg";
+  var names = {}; M.regions.forEach(function (r) { names[r.id] = r.name; });
+  var counts = {}; E.forEach(function (e) { counts[e.region] = (counts[e.region] || 0) + 1; });
+
+  var svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", M.viewBox);
+  svg.setAttribute("role", "group");
+  M.regions.forEach(function (r) {
+    var p = document.createElementNS(NS, "path");
+    p.setAttribute("d", r.path);
+    p.setAttribute("class", "region" + (counts[r.id] ? " has" : ""));
+    p.setAttribute("tabindex", "0");
+    p.setAttribute("role", "button");
+    p.setAttribute("aria-label", r.name + " : " + (counts[r.id] || 0) + " éleveur(s)");
+    p.dataset.id = r.id;
+    var t = document.createElementNS(NS, "title"); t.textContent = r.name; p.appendChild(t);
+    p.addEventListener("click", function () { pick(r.id); });
+    p.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pick(r.id); } });
+    svg.appendChild(p);
+  });
+  document.getElementById("map").appendChild(svg);
+
+  var reg = document.getElementById("reg");
+  reg.innerHTML = '<option value="">Toute la France</option>' + M.regions.map(function (r) {
+    return '<option value="' + r.id + '">' + r.name + "</option>";
+  }).join("");
+  reg.addEventListener("change", function () { pick(reg.value); });
+  document.getElementById("q").addEventListener("input", render);
+  document.getElementById("reset").addEventListener("click", function () { pick(""); });
+
+  function pick(id) { sel = (sel === id ? "" : id); reg.value = sel; render(); }
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+
+  function render() {
+    var q = document.getElementById("q").value.trim().toLowerCase();
+    svg.querySelectorAll(".region").forEach(function (p) { p.classList.toggle("active", p.dataset.id === sel); });
+    var list = E.filter(function (e) {
+      if (sel && e.region !== sel) return false;
+      if (!q) return true;
+      return [e.nom, e.exploitation, e.commune, e.departement, names[e.region]].join(" ").toLowerCase().indexOf(q) > -1;
+    });
+    document.getElementById("title").textContent = sel ? names[sel] : "Tous les éleveurs";
+    document.getElementById("reset").hidden = !sel;
+    var box = document.getElementById("list");
+    if (!list.length) {
+      box.innerHTML = '<div class="empty">Aucun éleveur référencé ' + (sel ? "dans cette région" : "pour cette recherche") + " pour le moment.</div>";
+      return;
+    }
+    box.innerHTML = list.map(function (e) {
+      var pic = e.photo ? '<img class="pic" src="' + esc(e.photo) + '" alt="Photo de ' + esc(e.exploitation) + '">'
+                        : '<div class="pic" aria-hidden="true">' + esc((e.exploitation || e.nom).charAt(0)) + "</div>";
+      return '<article class="farmer">' + pic + "<div>" +
+        "<h3>" + esc(e.exploitation) + (e.exemple ? ' <span class="tag ex">Exemple</span>' : "") + "</h3>" +
+        '<p class="where">' + esc(e.commune) + " · " + esc(e.departement) + " · " + esc(names[e.region]) + "</p>" +
+        "<p><strong>" + esc(e.nom) + "</strong></p>" +
+        (e.description ? "<p>" + esc(e.description) + "</p>" : "") +
+        (e.propose || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
+        '<p style="margin-top:.6rem">' +
+        (e.telephone ? '<a href="tel:' + esc(e.telephone.replace(/\s/g, "")) + '">' + esc(e.telephone) + "</a><br>" : "") +
+        (e.email ? '<a href="mailto:' + esc(e.email) + '">' + esc(e.email) + "</a><br>" : "") +
+        (e.site ? '<a href="' + esc(e.site) + '" rel="noopener">Site web</a>' : "") +
+        "</p></div></article>";
+    }).join("");
+  }
+  render();
+})();
+</script>
+</body>
+</html>

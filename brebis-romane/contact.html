@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Brebis Romane</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <div class="page-title"><div class="wrap">
+    <h1>Contact</h1>
+    <p>Une question, une demande&nbsp;? Écrivez-nous.</p>
+  </div></div>
+  <section>
+    <div class="wrap deux">
+      <div class="prose">
+        <h2>Coordonnées</h2>
+        <p>[Adresse]<br>[Téléphone]<br>[E-mail]</p>
+        <p class="todo">Le formulaire ci-contre est un modèle : il faudra le relier à un service d'envoi d'e-mails.</p>
+      </div>
+      <form class="contact" onsubmit="event.preventDefault();alert('Formulaire de démonstration : pas encore relié.');">
+        <label>Nom <input name="nom" required></label>
+        <label>E-mail <input type="email" name="email" required></label>
+        <label>Message <textarea name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
