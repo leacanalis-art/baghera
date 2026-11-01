@@ -3,7 +3,8 @@
   var pages = [
     ["index.html", "Accueil"],
     ["la-race.html", "La race"],
-    ["organisme-de-selection.html", "L'organisme de sélection"],
+    ["f1.html", "La F1"],
+    ["organisme-de-selection.html", "Organisme de sélection"],
     ["eleveurs.html", "Trouver un éleveur"],
     ["contact.html", "Contact"]
   ];
