@@ -98,7 +98,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* Carte des éleveurs */
 .finder { display: grid; grid-template-columns: minmax(300px, 5fr) 6fr; gap: 2rem; align-items: start; }
 @media (max-width: 900px) { .finder { grid-template-columns: 1fr; } }
-.mapbox { background: var(--menthe); border-radius: 28px; padding: 1.2rem; position: sticky; top: 100px; }
+.mapbox { background: var(--menthe); border-radius: 28px; padding: 1.2rem; position: sticky; top: 140px; }
 @media (max-width: 900px) { .mapbox { position: static; } }
 .mapbox svg { width: 100%; height: auto; max-height: 74vh; display: block; }
 .region { fill: #fff; stroke: var(--menthe); stroke-width: 1.5; cursor: pointer; transition: fill .15s; outline: none; }
@@ -158,3 +158,30 @@ form.contact input, form.contact textarea { font: inherit; padding: .85rem 1.1re
 .liste li::before { content: ""; position: absolute; left: 0; top: .6em; width: .8rem; height: .8rem; border-radius: 50%; background: var(--argile); }
 .source { font-size: .9rem; color: var(--gris); margin-top: .8rem; }
 .bloc { display: grid; gap: 2.5rem; }
+
+/* ---- Navigation à deux niveaux (structure du site d'origine) ---- */
+.bar-right { display: flex; align-items: center; gap: .6rem; }
+.bar-right .cta { background: var(--foret); color: #fff; padding: .7rem 1.3rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .98rem; }
+.bar-right .cta:hover { background: var(--foret-2); }
+#nav { display: block; position: static; background: var(--menthe); border-bottom: 0; box-shadow: none; padding: 0; flex-direction: row; }
+#nav .navin { display: flex; flex-wrap: wrap; gap: .1rem .15rem; align-items: center; padding-block: .35rem; }
+#nav a { padding: .5rem .8rem; font-size: .93rem; border-radius: 10px; margin: 0; background: none; color: var(--texte); display: inline-block; }
+#nav a:hover { background: #fff; }
+#nav a[aria-current="page"] { background: var(--foret); color: #fff; }
+.has-sub { position: relative; }
+.has-sub .plus { color: var(--argile); font-weight: 800; }
+.has-sub a[aria-current] .plus { color: #fff; }
+.sub { display: none; position: absolute; top: 100%; left: 0; min-width: 190px; background: #fff; border-radius: 14px; box-shadow: 0 18px 30px -10px rgba(0,0,0,.25); padding: .4rem; z-index: 30; }
+.has-sub:hover .sub, .has-sub:focus-within .sub { display: block; }
+.sub a { display: block; }
+@media (max-width: 900px) {
+  .burger { display: block; }
+  #nav { display: none; }
+  #site-header.open #nav { display: block; max-height: 75vh; overflow-y: auto; }
+  #nav .navin { flex-direction: column; align-items: stretch; padding-block: .6rem; }
+  #nav a { padding: .85rem 1rem; font-size: 1.05rem; }
+  .has-sub .sub { display: block; position: static; box-shadow: none; background: transparent; padding: 0 0 0 1rem; }
+  .bar-right .cta { padding: .6rem 1rem; font-size: .9rem; }
+}
+@media (max-width: 480px) { .bar-right .cta { display: none; } }
+#nav .sub a { display: block; }
