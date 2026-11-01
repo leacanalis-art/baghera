@@ -2,14 +2,11 @@
 (function () {
   var menu = [
     { h: "index.html", t: "Accueil" },
-    { h: "la-race.html", t: "La Romane", sub: [["la-race.html", "La race"], ["f1.html", "La F1"]] },
-    { h: "organisme-de-selection.html", t: "L'Organisme de sélection" },
-    { h: "schema-de-selection.html", t: "Le schéma de sélection" },
-    { h: "publications.html", t: "Publications" },
-    { h: "visites.html", t: "La Romane au fil de nos visites" },
-    { h: "vente-reproducteurs.html", t: "Vente de reproducteurs" },
-    { h: "actualites.html", t: "Actualités" },
-    { h: "partenaires.html", t: "Nos partenaires" },
+    { h: "romane.html", t: "La Romane", sub: [["romane.html", "Présentation"], ["histoire.html", "Son histoire"], ["qualites.html", "Ses qualités"], ["performances.html", "Ses performances"], ["f1.html", "La F1"], ["conseils.html", "Conseils d'élevage"]] },
+    { h: "vente.html", t: "Acheter des reproducteurs", sub: [["vente.html", "Agnelles, béliers, insémination"], ["eleveurs.html", "Carte des éleveurs"]] },
+    { h: "selection.html", t: "La sélection", sub: [["selection.html", "Le schéma de sélection"], ["sci.html", "Stations de contrôle (SCI)"], ["cpo.html", "Contrôle de performance (CPO)"], ["cia.html", "Insémination (CIA)"]] },
+    { h: "os.html", t: "L'OS Romane", sub: [["os.html", "Présentation et services"], ["equipe.html", "Conseil d'administration et équipe"], ["partenaires.html", "Nos partenaires"]] },
+    { h: "actualites.html", t: "Actualités et documents", sub: [["actualites.html", "Actualités"], ["documents.html", "Documents à télécharger"], ["presse.html", "Presse et témoignages"], ["visites.html", "Visites d'élevages"]] },
     { h: "contact.html", t: "Nous contacter" }
   ];
   var current = location.pathname.split("/").pop() || "index.html";
@@ -25,7 +22,7 @@
       it.sub.map(function (s) { return '<a href="' + s[0] + '"' + (s[0] === current ? ' aria-current="page"' : "") + ">" + s[1] + "</a>"; }).join("") + "</div></div>";
   }).join("");
   var flat = [];
-  menu.forEach(function (it) { flat.push([it.h, it.t]); (it.sub || []).forEach(function (s) { if (s[0] !== it.h) flat.push(s); }); });
+  menu.forEach(function (it) { if (it.h !== "index.html") flat.push([it.h, it.t]); });
   var foot = flat.map(function (p) { return '<a href="' + p[0] + '">' + p[1] + "</a>"; }).join("");
 
   var header = document.getElementById("site-header");

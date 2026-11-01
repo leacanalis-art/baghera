@@ -11,21 +11,34 @@
 <main>
   <div class="page-title"><div class="wrap">
     <h1>Nous contacter</h1>
-    <p>Une question, une demande&nbsp;? Écrivez-nous.</p>
+    <p>Une question, un projet ? Écrivez-nous ou appelez-nous.</p>
   </div></div>
   <section>
-    <div class="wrap deux">
-      <div class="prose">
-        <h2>Coordonnées</h2>
-        <p>[Adresse]<br>[Téléphone]<br>[E-mail]</p>
-        <p class="todo">Le formulaire ci-contre est un modèle : il faudra le relier à un service d'envoi d'e-mails.</p>
-      </div>
-      <form class="contact" onsubmit="event.preventDefault();alert('Formulaire de démonstration : pas encore relié.');">
-        <label>Nom <input name="nom" required></label>
-        <label>E-mail <input type="email" name="email" required></label>
-        <label>Message <textarea name="message" rows="5" required></textarea></label>
-        <button class="btn" type="submit">Envoyer</button>
-      </form>
+    <div class="wrap">
+<div class="deux" style="align-items:start">
+<div class="prose">
+<h2>O.S. Romane</h2>
+<p>Organisme de sélection<br>Les Nauzes<br>81580 SOUAL</p>
+<p><b>Tél.</b> <a href="tel:0563825298">05 63 82 52 98</a><br><b>Fax</b> 05 63 75 54 59<br><b>E-mail</b> <a href="mailto:osromane@arsoe-soual.com">osromane@arsoe-soual.com</a></p>
+<h3>Commercialisation et diffusion</h3>
+<p>Léa Dumont<br><a href="tel:0625256018">06 25 25 60 18</a><br><a href="mailto:lea.dumont@brebis-romane.com">lea.dumont@brebis-romane.com</a></p>
+<h3>Direction, schéma de sélection, génétique</h3>
+<p>Christophe Bodard<br><a href="tel:0632050768">06 32 05 07 68</a><br><a href="mailto:christophe.bodard@brebis-romane.com">christophe.bodard@brebis-romane.com</a></p>
+<h3>La plaquette de la race</h3><div class="docs"><a class="doc" href="assets/docs/Plaquette_OSRomane-Web.pdf" target="_blank" rel="noopener"><span class="doc-ico" aria-hidden="true">PDF</span><span class="doc-txt"><strong>Télécharger la nouvelle plaquette de la race</strong><em>1.1 Mo</em></span><span class="doc-dl">Télécharger</span></a></div>
+</div>
+<div>
+<h2>Laissez-nous un message</h2>
+<p class="todo">Ce formulaire est un modèle : il doit encore être relié à un service d'envoi d'e-mails avant la mise en ligne.</p>
+<form class="contact" onsubmit="event.preventDefault();alert('Formulaire de démonstration : pas encore relié.');">
+<label>Nom <input name="nom" required></label>
+<label>Entreprise <input name="entreprise"></label>
+<label>Code postal et ville <input name="ville"></label>
+<label>Téléphone <input name="tel" type="tel"></label>
+<label>E-mail <input type="email" name="email" required></label>
+<label>Message <textarea name="message" rows="5" required></textarea></label>
+<button class="btn" type="submit">Envoyer</button>
+</form>
+</div></div>
     </div>
   </section>
 </main>

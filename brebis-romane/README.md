@@ -2,10 +2,15 @@
 
 Site statique : ouvrir `index.html`, aucune installation nécessaire.
 
-- **Ajouter un éleveur** : `assets/eleveurs.js` (copier un bloc, remplir, ajouter la photo dans `assets/img/`). Supprimer `exemple: true` pour une vraie fiche.
-- **Contenu à reprendre** du site actuel : les zones `[entre crochets]` et « Photo à ajouter » dans `index.html`, `la-race.html`, `organisme-de-selection.html`, `contact.html`.
-- **Carte** : `assets/map-data.js`, tirée de `@svg-maps/france.regions` (licence CC BY-NC 4.0, usage non commercial, attribution requise).
+## Structure
+- Pages : `index.html`, `romane.html`, `histoire.html`, `qualites.html`, `performances.html`, `conseils.html`, `vente.html`, `selection.html`, `sci.html`, `cpo.html`, `cia.html`, `os.html`, `equipe.html`, `partenaires.html`, `actualites.html`, `documents.html`, `presse.html`, `visites.html`, `contact.html`.
+- Écrites à la main : `eleveurs.html` (carte de France) et `f1.html`.
+- Les autres pages sont **générées** par `python3 outils/generer.py` : pour changer un texte, le modifier dans `outils/generer.py` puis relancer.
+- Menu et pied de page : `assets/site.js`. Styles : `assets/style.css`.
+- Photos : `assets/img/`. Documents PDF : `assets/docs/`.
 
-## Photos
-Déposer les images dans `assets/img/` avec ces noms (elles remplacent automatiquement les emplacements) :
-`hero.jpg` (bandeau d'accueil), `accueil-1.jpg`, `la-race-1.jpg`, `organisme-1.jpg`.
+## Ajouter un éleveur
+`assets/eleveurs.js` : copier un bloc, remplir, ajouter la photo dans `assets/img/`. Supprimer `exemple: true` pour une vraie fiche.
+
+## Crédits
+Contenu, photos et documents : site d'origine brebis-romane.com (OS Romane). Carte des régions : `@svg-maps/france.regions` (CC BY-NC 4.0, attribution requise).
