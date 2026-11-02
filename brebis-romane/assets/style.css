@@ -311,3 +311,57 @@ section { padding: 4.2rem 0; }
 .social a { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; color: #fff; transition: background .18s; }
 .social a:hover { background: var(--argile); text-decoration: none; }
 .legal { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.2rem; margin-top: 2.5rem; }
+
+/* ---- Carte des éleveurs : points, fiche détaillée, recherche ---- */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.finder { grid-template-columns: minmax(300px, 5fr) 6fr; gap: 2.2rem; }
+.mapbox { background: var(--menthe); border-radius: 28px; padding: 1.2rem 1.2rem .9rem; top: 100px; }
+.mapbox svg { max-height: 78vh; }
+.region { fill: #fff; stroke: #d6dcc6; stroke-width: 1.2; cursor: pointer; transition: fill .15s; }
+.region:hover { fill: #f2f4e8; }
+.region.active { fill: #cfdcb8; }
+.pin { cursor: pointer; outline: none; transition: opacity .2s; }
+.pin .dot { fill: var(--argile); stroke: #fff; stroke-width: 2.4; transition: r .15s, fill .15s; }
+.pin .halo { fill: var(--argile); opacity: 0; transition: opacity .15s; }
+.pin:hover .dot, .pin:focus-visible .dot { r: 9; }
+.pin:hover .halo, .pin:focus-visible .halo { opacity: .22; }
+.pin.sel .dot { fill: var(--foret); r: 9.5; }
+.pin.sel .halo { fill: var(--foret); opacity: .28; r: 17; }
+.pin.off { opacity: .18; pointer-events: none; }
+.legend { justify-content: space-between; align-items: center; }
+.legend .pt { background: var(--argile); border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--argile); }
+.tools input, .tools select { border: 2px solid var(--ligne); border-radius: 999px; padding: .9rem 1.3rem; font: inherit; }
+.tools input:focus, .tools select:focus { border-color: var(--foret-2); outline: none; }
+.exemple-note { margin: 0 0 1.2rem; font-size: .9rem; color: #6b5412; background: #fff3cf; border-radius: 12px; padding: .5rem .9rem; }
+
+.fiche-el { background: #fff; border: 1px solid var(--ligne); border-radius: 26px; overflow: hidden; margin-bottom: 1.8rem; box-shadow: 0 24px 50px -28px rgba(45,68,48,.5); animation: apparait .25s ease-out; }
+@keyframes apparait { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fiche-el { animation: none; } }
+.fiche-photo { position: relative; }
+.fiche-photo .fp { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.fp.init { background: var(--foret); color: var(--ble); font: 800 4rem var(--titre); display: grid; place-items: center; }
+.badge-ex { position: absolute; left: 1rem; top: 1rem; background: rgba(255,243,207,.95); color: #6b5412; font-size: .8rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; }
+.fiche-body { padding: 1.5rem 1.7rem 1.6rem; }
+.fiche-body h3 { font-size: 1.6rem; margin-bottom: .2rem; }
+.fiche-body .where { color: var(--gris); margin: 0 0 1rem; }
+.infos { list-style: none; margin: 0 0 .8rem; padding: 0; display: flex; gap: .4rem 1.6rem; flex-wrap: wrap; }
+.infos b, .propose b { color: var(--argile); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; margin-right: .4rem; }
+.propose { margin: 0 0 .8rem; }
+.actions-el { display: flex; gap: .6rem; flex-wrap: wrap; margin: 1.2rem 0 .6rem; }
+.actions-el .btn { padding: .8rem 1.4rem; }
+
+.ligne { display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; width: 100%; text-align: left; font: inherit; color: var(--texte); background: #fff; border: 1px solid var(--ligne); border-radius: 18px; padding: .6rem .9rem .6rem .6rem; margin-bottom: .6rem; cursor: pointer; transition: border-color .15s, transform .15s; }
+.ligne:hover { border-color: var(--argile); transform: translateX(3px); }
+.ligne.on { border-color: var(--foret); background: var(--menthe); }
+.ligne .th { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; display: block; }
+.ligne .th.init { background: var(--foret); color: var(--ble); font: 800 1.6rem var(--titre); display: grid; place-items: center; }
+.ligne strong { display: block; color: var(--foret); line-height: 1.25; }
+.ligne small { color: var(--gris); font-size: .9rem; }
+.ligne .go { color: var(--argile); font-weight: 700; font-size: 1.2rem; }
+.mapcol { position: relative; }
+@media (max-width: 900px) {
+  .finder { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+  .mapbox { position: static; }
+  .mapbox svg { max-height: 60vh; }
+}
+.finder > * { min-width: 0; }

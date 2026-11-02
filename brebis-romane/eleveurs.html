@@ -11,29 +11,37 @@
 <main>
   <div class="page-title"><div class="wrap">
     <h1>Trouver un éleveur</h1>
-    <p>Cliquez sur votre région pour voir les éleveurs de brebis Romane.</p>
+    <p>Cliquez sur un point de la carte, ou cherchez par ville ou par département.</p>
   </div></div>
 
   <section>
     <div class="wrap finder">
-      <div class="mapbox">
-        <div id="map" aria-label="Carte des régions de France"></div>
-        <div class="legend">
-          <span><i style="background:#8aa86b"></i>Éleveurs présents</span>
-          <span><i style="background:#fff"></i>Pas encore d'éleveur</span>
+      <div class="mapcol">
+        <div class="mapbox">
+          <div id="map" aria-label="Carte de France des éleveurs"></div>
+          <div class="legend">
+            <span><i class="pt"></i>Un éleveur</span>
+            <span id="compte"></span>
+          </div>
         </div>
       </div>
 
-      <div>
+      <div class="rescol">
         <div class="tools">
-          <input id="q" type="search" placeholder="Rechercher (nom, commune…)" aria-label="Rechercher un éleveur">
-          <select id="reg" aria-label="Choisir une région"></select>
+          <label class="sr" for="q">Rechercher par ville ou par département</label>
+          <input id="q" type="search" placeholder="Ville, département ou n° (ex. Aveyron, 12, Auch)" autocomplete="off">
+          <label class="sr" for="reg">Région</label>
+          <select id="reg"></select>
         </div>
+        <p class="exemple-note">Fiches d'exemple : les éleveurs affichés sont fictifs, pour montrer le fonctionnement.</p>
+
+        <div id="detail" aria-live="polite"></div>
+
         <div class="results-head">
           <h2 id="title">Tous les éleveurs</h2>
-          <button class="link-btn" id="reset" hidden>Voir toute la France</button>
+          <button class="link-btn" id="reset" hidden>Tout afficher</button>
         </div>
-        <div id="list" aria-live="polite"></div>
+        <div id="list"></div>
       </div>
     </div>
   </section>
@@ -44,89 +52,108 @@
 <script src="assets/site.js"></script>
 <script>
 (function () {
-  var M = window.FRANCE_MAP, E = window.ELEVEURS, sel = "", NS = "http://www.w3.org/2000/svg";
+  var M = window.FRANCE_MAP, E = window.ELEVEURS, NS = "http://www.w3.org/2000/svg";
+  var selRegion = "", selId = null;
   var names = {}; M.regions.forEach(function (r) { names[r.id] = r.name; });
-  var counts = {}; E.forEach(function (e) { counts[e.region] = (counts[e.region] || 0) + 1; });
 
+  /* Projection latitude/longitude vers la carte (calée sur les limites de la France) */
+  function xy(lat, lon) { return [16.1 + (lon + 4.79) * 41.52, (51.09 - lat) * 60.5]; }
+  function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim(); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  E.forEach(function (e, i) { e.id = i; e.hay = norm([e.commune, e.departement, e.code, e.exploitation, e.nom, names[e.region]].join(" ")); });
+
+  /* Carte */
   var svg = document.createElementNS(NS, "svg");
   svg.setAttribute("viewBox", M.viewBox);
-  svg.setAttribute("role", "group");
   M.regions.forEach(function (r) {
     var p = document.createElementNS(NS, "path");
-    p.setAttribute("d", r.path);
-    p.setAttribute("class", "region" + (counts[r.id] ? " has" : ""));
-    p.setAttribute("tabindex", "0");
-    p.setAttribute("role", "button");
-    p.setAttribute("aria-label", r.name + " : " + (counts[r.id] || 0) + " éleveur(s)");
-    p.dataset.id = r.id;
+    p.setAttribute("d", r.path); p.setAttribute("class", "region"); p.dataset.id = r.id;
     var t = document.createElementNS(NS, "title"); t.textContent = r.name; p.appendChild(t);
-    p.addEventListener("click", function () { pick(r.id); });
-    p.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); pick(r.id); } });
+    p.addEventListener("click", function () { selRegion = selRegion === r.id ? "" : r.id; selId = null; document.getElementById("reg").value = selRegion; render(); });
     svg.appendChild(p);
   });
-  
+  var pins = {};
+  E.forEach(function (e) {
+    var c = xy(e.lat, e.lon);
+    var g = document.createElementNS(NS, "g");
+    g.setAttribute("class", "pin"); g.setAttribute("tabindex", "0"); g.setAttribute("role", "button");
+    g.setAttribute("aria-label", e.exploitation + ", " + e.commune + " (" + e.code + ")");
+    g.innerHTML = '<circle class="halo" cx="' + c[0] + '" cy="' + c[1] + '" r="13"/><circle class="dot" cx="' + c[0] + '" cy="' + c[1] + '" r="6.5"/><title>' + esc(e.exploitation + " — " + e.commune) + "</title>";
+    g.addEventListener("click", function (ev) { ev.stopPropagation(); choose(e.id, true); });
+    g.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); choose(e.id, true); } });
+    svg.appendChild(g); pins[e.id] = g;
+  });
   document.getElementById("map").appendChild(svg);
-  var placed = false;
-  function placeBubbles() {
-    if (placed) return;
-    var any = false;
-    svg.querySelectorAll(".region.has").forEach(function (p) {
-      var bb = p.getBBox(), n = counts[p.dataset.id];
-      if (!bb.width) return;
-      any = true;
-      var c = document.createElementNS(NS, "circle"), t = document.createElementNS(NS, "text");
-      c.setAttribute("cx", bb.x + bb.width / 2); c.setAttribute("cy", bb.y + bb.height / 2); c.setAttribute("r", 13); c.setAttribute("class", "bulle");
-      c.dataset.id = p.dataset.id;
-      t.setAttribute("x", bb.x + bb.width / 2); t.setAttribute("y", bb.y + bb.height / 2); t.setAttribute("class", "bulle-t"); t.textContent = n;
-      svg.appendChild(c); svg.appendChild(t);
-    });
-    placed = any;
-    if (any) render();
-  }
-  placeBubbles();
-  window.addEventListener("hashchange", placeBubbles); window.addEventListener("viewshown", placeBubbles);
 
   var reg = document.getElementById("reg");
-  reg.innerHTML = '<option value="">Toute la France</option>' + M.regions.map(function (r) {
-    return '<option value="' + r.id + '">' + r.name + "</option>";
-  }).join("");
-  reg.addEventListener("change", function () { pick(reg.value); });
-  document.getElementById("q").addEventListener("input", render);
-  document.getElementById("reset").addEventListener("click", function () { pick(""); });
+  reg.innerHTML = '<option value="">Toute la France</option>' + M.regions.map(function (r) { return '<option value="' + r.id + '">' + r.name + "</option>"; }).join("");
+  reg.addEventListener("change", function () { selRegion = reg.value; selId = null; render(); });
+  document.getElementById("q").addEventListener("input", function () { selId = null; render(); });
+  document.getElementById("reset").addEventListener("click", function () { selRegion = ""; selId = null; reg.value = ""; document.getElementById("q").value = ""; render(); });
 
-  function pick(id) { sel = (sel === id ? "" : id); reg.value = sel; render(); }
-  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function filtered() {
+    var q = norm(document.getElementById("q").value);
+    return E.filter(function (e) {
+      if (selRegion && e.region !== selRegion) return false;
+      if (!q) return true;
+      return q.split(" ").every(function (w) { return e.hay.indexOf(w) > -1; });
+    });
+  }
+  function choose(id, scroll) {
+    selId = id;
+    var e = E[id];
+    if (selRegion && e.region !== selRegion) { selRegion = ""; reg.value = ""; }
+    render();
+    if (scroll) { var d = document.getElementById("detail"); if (d.scrollIntoView && window.innerWidth < 900) d.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  }
+  function photo(e, cls) {
+    return e.photo ? '<img class="' + cls + '" src="' + esc(e.photo) + '" alt="Photo de ' + esc(e.exploitation) + '" loading="lazy">'
+                   : '<div class="' + cls + ' init" aria-hidden="true">' + esc(e.exploitation.charAt(0)) + "</div>";
+  }
+  function detail(e) {
+    var tags = (e.propose || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("");
+    return '<article class="fiche-el">' +
+      '<div class="fiche-photo">' + photo(e, "fp") + (e.exemple ? '<span class="badge-ex">Photo et fiche d\'exemple</span>' : "") + "</div>" +
+      '<div class="fiche-body"><h3>' + esc(e.exploitation) + "</h3>" +
+      '<p class="where">' + esc(e.commune) + " · " + esc(e.departement) + " (" + esc(e.code) + ") · " + esc(names[e.region]) + "</p>" +
+      '<ul class="infos">' + (e.brebis ? "<li><b>Troupeau</b> " + esc(e.brebis) + " brebis</li>" : "") + "<li><b>Contact</b> " + esc(e.nom) + "</li></ul>" +
+      (tags ? '<p class="propose"><b>Propose</b> ' + tags + "</p>" : "") +
+      (e.description ? "<p>" + esc(e.description) + "</p>" : "") +
+      '<div class="actions-el">' +
+      (e.telephone ? '<a class="btn" href="tel:' + esc(e.telephone.replace(/\s/g, "")) + '">' + esc(e.telephone) + "</a>" : "") +
+      (e.email ? '<a class="btn second" href="mailto:' + esc(e.email) + '">Écrire</a>' : "") +
+      (e.site ? '<a class="btn second" href="' + esc(e.site) + '" target="_blank" rel="noopener">Site web</a>' : "") +
+      '</div><button class="link-btn" id="fermer">Fermer la fiche</button></div></article>';
+  }
 
   function render() {
-    var q = document.getElementById("q").value.trim().toLowerCase();
-    svg.querySelectorAll(".region,.bulle").forEach(function (p) { p.classList.toggle("active", p.dataset.id === sel); });
-    var list = E.filter(function (e) {
-      if (sel && e.region !== sel) return false;
-      if (!q) return true;
-      return [e.nom, e.exploitation, e.commune, e.departement, names[e.region]].join(" ").toLowerCase().indexOf(q) > -1;
+    var list = filtered(), ids = {};
+    list.forEach(function (e) { ids[e.id] = 1; });
+    svg.querySelectorAll(".region").forEach(function (p) { p.classList.toggle("active", p.dataset.id === selRegion); });
+    Object.keys(pins).forEach(function (k) {
+      pins[k].classList.toggle("off", !ids[k]);
+      pins[k].classList.toggle("sel", +k === selId);
     });
-    document.getElementById("title").textContent = sel ? names[sel] : "Tous les éleveurs";
-    document.getElementById("reset").hidden = !sel;
+    /* le point sélectionné passe au premier plan */
+    if (selId != null) svg.appendChild(pins[selId]);
+    document.getElementById("compte").textContent = list.length + " éleveur" + (list.length > 1 ? "s" : "") + " affiché" + (list.length > 1 ? "s" : "");
+    var q = document.getElementById("q").value.trim();
+    document.getElementById("title").textContent = selRegion ? names[selRegion] : (q ? "Résultats pour « " + q + " »" : "Tous les éleveurs");
+    document.getElementById("reset").hidden = !(selRegion || q);
+
+    var d = document.getElementById("detail");
+    d.innerHTML = selId != null ? detail(E[selId]) : "";
+    var f = document.getElementById("fermer");
+    if (f) f.addEventListener("click", function () { selId = null; render(); });
+
     var box = document.getElementById("list");
-    if (!list.length) {
-      box.innerHTML = '<div class="empty">Aucun éleveur référencé ' + (sel ? "dans cette région" : "pour cette recherche") + " pour le moment.</div>";
-      return;
-    }
+    if (!list.length) { box.innerHTML = '<div class="empty">Aucun éleveur ne correspond à cette recherche. Essayez un département (ex. 12), une autre ville ou « Toute la France ».</div>'; return; }
     box.innerHTML = list.map(function (e) {
-      var pic = e.photo ? '<img class="pic" src="' + esc(e.photo) + '" alt="Photo de ' + esc(e.exploitation) + '">'
-                        : '<div class="pic" aria-hidden="true">' + esc((e.exploitation || e.nom).charAt(0)) + "</div>";
-      return '<article class="farmer">' + pic + "<div>" +
-        "<h3>" + esc(e.exploitation) + (e.exemple ? ' <span class="tag ex">Exemple</span>' : "") + "</h3>" +
-        '<p class="where">' + esc(e.commune) + " · " + esc(e.departement) + " · " + esc(names[e.region]) + "</p>" +
-        "<p><strong>" + esc(e.nom) + "</strong></p>" +
-        (e.description ? "<p>" + esc(e.description) + "</p>" : "") +
-        (e.propose || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
-        '<p style="margin-top:.6rem">' +
-        (e.telephone ? '<a href="tel:' + esc(e.telephone.replace(/\s/g, "")) + '">' + esc(e.telephone) + "</a><br>" : "") +
-        (e.email ? '<a href="mailto:' + esc(e.email) + '">' + esc(e.email) + "</a><br>" : "") +
-        (e.site ? '<a href="' + esc(e.site) + '" rel="noopener">Site web</a>' : "") +
-        "</p></div></article>";
+      return '<button class="ligne' + (e.id === selId ? " on" : "") + '" data-id="' + e.id + '">' + photo(e, "th") +
+        "<span><strong>" + esc(e.exploitation) + "</strong><small>" + esc(e.commune) + " · " + esc(e.departement) + " (" + esc(e.code) + ")</small></span>" +
+        '<span class="go" aria-hidden="true">→</span></button>';
     }).join("");
+    box.querySelectorAll(".ligne").forEach(function (b) { b.addEventListener("click", function () { choose(+b.dataset.id, true); }); });
   }
   render();
 })();
