@@ -68,9 +68,9 @@
     header.innerHTML =
       '<div class="wrap bar">' +
       '<a class="brand" href="index.html"><img class="logo" src="assets/img/logo.jpg" alt="Romane : l\'essayer c\'est l\'adopter"></a>' +
-      '<nav class="mainnav" id="mainnav" aria-label="Navigation principale"><ul>' + nav + "</ul></nav>" +
       '<div class="bar-right"><a class="cta" href="eleveurs.html">Trouver un éleveur</a>' +
-      '<button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mainnav">☰</button></div></div>';
+      '<button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mainnav">☰</button></div></div>' +
+      '<nav class="mainnav" id="mainnav" aria-label="Navigation principale"><div class="wrap"><ul>' + nav + "</ul></div></nav>";
 
     var burger = header.querySelector(".burger");
     var closeAll = function (except) {
@@ -83,10 +83,28 @@
     header.querySelectorAll(".mn-btn").forEach(function (b) {
       b.addEventListener("click", function (ev) {
         ev.stopPropagation();
-        var open = b.getAttribute("aria-expanded") !== "true";
+        var open = b.getAttribute("aria-expanded") !== "true" || window.matchMedia("(hover: hover) and (min-width: 1081px)").matches;
         closeAll(b);
         b.setAttribute("aria-expanded", open);
         document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+      });
+    });
+    var survol = window.matchMedia("(hover: hover) and (min-width: 1081px)");
+    header.querySelectorAll(".mn-item").forEach(function (li) {
+      var b = li.querySelector(".mn-btn"), t;
+      if (!b) return;
+      li.addEventListener("mouseenter", function () {
+        if (!survol.matches) return;
+        clearTimeout(t); closeAll(b);
+        b.setAttribute("aria-expanded", "true");
+        document.getElementById(b.getAttribute("aria-controls")).hidden = false;
+      });
+      li.addEventListener("mouseleave", function () {
+        if (!survol.matches) return;
+        t = setTimeout(function () {
+          b.setAttribute("aria-expanded", "false");
+          document.getElementById(b.getAttribute("aria-controls")).hidden = true;
+        }, 180);
       });
     });
     header.addEventListener("click", function (ev) {
