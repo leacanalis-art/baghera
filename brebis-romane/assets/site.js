@@ -151,3 +151,95 @@
       '<div class="wrap legal">© ' + new Date().getFullYear() + " OS Romane — Mentions légales à compléter.</div>";
   }
 })();
+
+/* Visionneuse de photos : clic sur une photo d'une galerie (ou une photo isolée) pour la voir en grand */
+(function () {
+  var box, imgEl, countEl, strip, items = [], idx = 0, lastFocus = null, startX = null;
+
+  function build() {
+    box = document.createElement("div");
+    box.className = "lb"; box.hidden = true;
+    box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true"); box.setAttribute("aria-label", "Galerie photos");
+    box.innerHTML =
+      '<button class="lb-close" type="button" aria-label="Fermer">✕</button>' +
+      '<button class="lb-nav lb-prev" type="button" aria-label="Photo précédente">‹</button>' +
+      '<figure class="lb-main"><img alt=""><figcaption></figcaption></figure>' +
+      '<button class="lb-nav lb-next" type="button" aria-label="Photo suivante">›</button>' +
+      '<div class="lb-strip" role="list"></div>';
+    document.body.appendChild(box);
+    imgEl = box.querySelector(".lb-main img");
+    countEl = box.querySelector("figcaption");
+    strip = box.querySelector(".lb-strip");
+    box.querySelector(".lb-close").addEventListener("click", close);
+    box.querySelector(".lb-prev").addEventListener("click", function () { go(-1); });
+    box.querySelector(".lb-next").addEventListener("click", function () { go(1); });
+    box.addEventListener("click", function (e) { if (e.target === box || e.target.classList.contains("lb-main")) close(); });
+    box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX; startX = null;
+      if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (box.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+    });
+  }
+
+  function show(i) {
+    idx = (i + items.length) % items.length;
+    var it = items[idx];
+    imgEl.src = it.src; imgEl.alt = it.alt;
+    countEl.textContent = (idx + 1) + " / " + items.length;
+    strip.querySelectorAll("button").forEach(function (b, k) {
+      var on = k === idx;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-current", on ? "true" : "false");
+      if (on && b.scrollIntoView) b.scrollIntoView({ block: "nearest", inline: "center" });
+    });
+    var multi = items.length > 1;
+    box.querySelector(".lb-prev").hidden = !multi; box.querySelector(".lb-next").hidden = !multi; strip.hidden = !multi;
+  }
+  function go(d) { if (items.length > 1) show(idx + d); }
+
+  function open(list, start) {
+    if (!box) build();
+    items = list; lastFocus = document.activeElement;
+    strip.innerHTML = "";
+    items.forEach(function (it, k) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("aria-label", "Voir la photo " + (k + 1));
+      var im = document.createElement("img"); im.src = it.thumb; im.alt = "";
+      b.appendChild(im); b.addEventListener("click", function () { show(k); });
+      strip.appendChild(b);
+    });
+    box.hidden = false; document.documentElement.classList.add("lb-open");
+    show(start);
+    box.querySelector(".lb-close").focus();
+  }
+  function close() {
+    if (!box || box.hidden) return;
+    box.hidden = true; document.documentElement.classList.remove("lb-open");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function info(img, a) {
+    var href = a && a.getAttribute("href");
+    var big = href && /\.(jpe?g|png|webp)(\?|$)/i.test(href) ? href : img.currentSrc || img.src;
+    return { src: big, thumb: img.currentSrc || img.src, alt: img.alt || "" };
+  }
+
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest(".galerie a");
+    if (a) {
+      e.preventDefault();
+      var all = Array.prototype.slice.call(a.closest(".galerie").querySelectorAll("a"));
+      open(all.map(function (x) { return info(x.querySelector("img"), x); }), all.indexOf(a));
+      return;
+    }
+    var f = e.target.closest(".fig img, .fiche-photo .fp");
+    if (f) open([info(f, null)], 0);
+  });
+})();
