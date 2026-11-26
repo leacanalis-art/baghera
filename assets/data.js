@@ -62,6 +62,28 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "lavera-emturian",
+    marque: "Lavera",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · réaction · gamme peaux sensibles",
+    visuel: "assets/img/projet-emturian-lavera.jpg",
+    cadrage: "50% 80%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DfkuaRgtJeT/",
+    lienLabel: "Voir le réel",
+    accroche: "Rebondir sur l’actualité d’une marque pour présenter la gamme faite pour les peaux sensibles.",
+    projet: [
+      "Pour Lavera, Emeline (Emturian) part d’une vidéo où une créatrice YouTube met la marque en avant, puis présente sa gamme pour les peaux sensibles, réactives et qui tiraillent, agréablement surprise par les compositions.",
+      "Un contenu en collaboration commerciale clairement annoncée, avec un code promo dédié à sa communauté, dans la continuité d’une marque dont elle parle déjà souvent, notamment pour le maquillage."
+    ],
+    pourquoi: [
+      ["Un ton spontané", "La réaction à une actualité rend la prise de parole naturelle."],
+      ["Une relation déjà installée", "Emeline parle régulièrement de la marque, notamment de son maquillage."],
+      ["Un regard sur les compositions", "Son exigence sur la beauté clean renforce la crédibilité de la recommandation."]
+    ]
+  },
+  {
     id: "ballot-flurin-emturian",
     marque: "Ballot-Flurin",
     talent: "emturian",
@@ -81,6 +103,30 @@ window.BAGHERA_PROJETS = [
       ["Une marque de proximité", "Une découverte locale, racontée avec le ton habituel d’Emeline."],
       ["Une recommandation saisonnière", "Un usage concret, au moment où la communauté en a besoin."],
       ["Un code promo dédié", "Une offre pour la communauté, qui permet de mesurer l’intérêt suscité."]
+    ]
+  },
+  {
+    id: "avis-marques-emturian",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Avis sans filtres",
+    titre: "Mon avis 100 % sans filtres sur les marques",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · avis · contenu organique",
+    visuel: "assets/img/projet-emturian-ca-cest-fait.jpg",
+    cadrage: "50% 50%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/Df46NjYqlf3/",
+    lienLabel: "Voir le réel",
+    accroche: "Dire ce qu’on pense, sans filtre : la franchise comme signature.",
+    projet: [
+      "Un exemple de contenu organique signé Emeline, Emturian : « Mon avis 100 % sans filtres sur les marques », un réel dans lequel elle passe des marques en revue avec le franc-parler qui la caractérise.",
+      "Un format direct, qui a rassemblé plus de 6 000 mentions « J’aime » et près de 500 commentaires."
+    ],
+    pourquoi: [
+      ["Une parole libre", "Un avis personnel, qui nourrit la confiance de sa communauté."],
+      ["Une communauté qui réagit", "Des centaines de commentaires : le format ouvre la discussion."],
+      ["Un regard exigeant", "La même exigence que dans ses collaborations."]
     ]
   },
   {
@@ -185,6 +231,78 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "color-match-bordeaux-nastassja",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Color Match",
+    titre: "4 associations avec une jupe bordeaux",
+    talent: "nastassja",
+    categories: ["Mode"],
+    format: "Réel Instagram · série « Color Match » · contenu organique",
+    visuel: "assets/img/projet-nastassja-bordeaux.jpg",
+    cadrage: "50% 45%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DfPy3KvNOqe/",
+    lienLabel: "Voir le réel",
+    accroche: "Comprendre les couleurs pour créer plus de looks avec moins de vêtements.",
+    projet: [
+      "Un exemple de contenu organique signé Nastassja : dans sa série « Color Match », elle part d’une jupe bordeaux effet cuir et propose quatre associations de couleurs, une grande tendance de l’automne-hiver 2026.",
+      "Un contenu pédagogique, à enregistrer, qui aide à optimiser son dressing."
+    ],
+    pourquoi: [
+      ["Un rendez-vous récurrent", "La série « Color Match » fidélise sa communauté."],
+      ["Un conseil de styliste", "Associations de couleurs, matières et volumes expliqués simplement."],
+      ["Un contenu à enregistrer", "Plus de 800 commentaires et un format pensé pour revenir."]
+    ]
+  },
+  {
+    id: "pantalon-cuir-nastassja",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "1 pièce, 4 looks",
+    titre: "Le pantalon barrel effet cuir, de quatre façons",
+    talent: "nastassja",
+    categories: ["Mode"],
+    format: "Réel Instagram · série « 1 pièce = 4 looks » · contenu organique",
+    visuel: "assets/img/projet-nastassja-pantalon-cuir.jpg",
+    cadrage: "50% 45%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DfU8V4MtRry/",
+    lienLabel: "Voir le réel",
+    accroche: "Une seule pièce, du décontracté au soir.",
+    projet: [
+      "Un exemple de contenu organique signé Nastassja : dans sa série « 1 pièce = 4 looks », elle montre comment porter un pantalon barrel marron effet cuir pour des tenues décontractées, chics, professionnelles ou de soirée.",
+      "En jouant avec les matières, les volumes, les couleurs et les accessoires, une même pièce change complètement d’allure."
+    ],
+    pourquoi: [
+      ["Un format utile", "Quatre tenues à partir d’une seule pièce."],
+      ["Une approche responsable", "Réinventer sa garde-robe sans tout renouveler."],
+      ["Le conseil d’une styliste", "Des repères concrets pour oser les proportions."]
+    ]
+  },
+  {
+    id: "trench-nastassja",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "1 pièce, 4 looks",
+    titre: "Le trench, intemporel et facile à porter",
+    talent: "nastassja",
+    categories: ["Mode"],
+    format: "Réel Instagram · quatre looks · contenu organique",
+    visuel: "assets/img/projet-nastassja-trench.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DcwCsT9Npsl/",
+    lienLabel: "Voir le réel",
+    accroche: "Décontractée, professionnelle, chic ou soirée : un même trench.",
+    projet: [
+      "Un exemple de contenu organique signé Nastassja : quatre façons de porter un trench, du look casual avec un jean à la tenue de travail, puis à l’allure chic et au soir.",
+      "Son credo : choisir des pièces actuelles, mais assez intemporelles pour rester plusieurs saisons dans son dressing."
+    ],
+    pourquoi: [
+      ["Une pièce que tout le monde connaît", "Des idées applicables immédiatement."],
+      ["Une communauté très réactive", "Près de 600 commentaires."],
+      ["Un style cohérent", "La même exigence que dans ses collaborations."]
+    ]
+  },
+  {
     id: "halara-nastassja",
     marque: "Halara",
     talent: "nastassja",
@@ -226,6 +344,28 @@ window.BAGHERA_PROJETS = [
       ["L’œil d’une styliste", "Nastassja explique comment associer les couleurs, au-delà de la simple mise en avant du produit."],
       ["Une série qui fidélise", "Le « Color Match » est un rendez-vous récurrent, que sa communauté retrouve et enregistre."],
       ["Un lien direct avec l’audience", "Un mot-clé en commentaire et le lien arrive en message privé : un format qui convertit."]
+    ]
+  },
+  {
+    id: "ainoha-lea",
+    marque: "AINOHA",
+    talent: "lea",
+    categories: ["Santé", "Micronutrition"],
+    format: "Réel Instagram · bilan sanguin à domicile · périménopause",
+    visuel: "assets/img/projet-lea-ainoha.jpg",
+    cadrage: "50% 30%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DXYc2uWjIQu/",
+    lienLabel: "Voir le réel",
+    accroche: "Un bilan sanguin à domicile, expliqué par une docteure en pharmacie.",
+    projet: [
+      "Pour AINOHA, application dédiée à la périménopause, Léa présente le kit de bilan sanguin à domicile analysé en laboratoire : un micro-prélèvement au bout du doigt, envoyé par la poste, avec des résultats dans l’application.",
+      "Elle explique l’intérêt de deux marqueurs, la vitamine D et le profil des oméga, avec son regard de professionnelle de santé, dans un partenariat rémunéré clairement annoncé."
+    ],
+    pourquoi: [
+      ["Une légitimité scientifique", "Une docteure en pharmacie qui explique ce que mesure le test."],
+      ["Une démonstration concrète", "Elle réalise elle-même le bilan et en montre les étapes."],
+      ["Un partenariat transparent", "La mention du partenariat rémunéré est indiquée dans la publication."]
     ]
   },
   {
@@ -274,6 +414,30 @@ window.BAGHERA_PROJETS = [
       ["Une pharmacienne qui parle santé", "Un sujet sensible, traité avec la légitimité d’une professionnelle."],
       ["Un message court et clair", "Un format direct, facile à partager, qui invite à consulter."],
       ["Un contenu sans marque", "La preuve qu’un créateur expert peut s’engager sur un sujet de santé pour lui-même, avant toute collaboration."]
+    ]
+  },
+  {
+    id: "cremes-nuit-skintelligence",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Crèmes de nuit",
+    titre: "Les 3 crèmes de nuit en parapharmacie qu’elle conseille le plus",
+    talent: "skintelligence",
+    categories: ["Skincare"],
+    format: "Réel Instagram · top 3 · contenu organique",
+    visuel: "assets/img/projet-sj-cremes-nuit.jpg",
+    cadrage: "50% 45%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/Df5Mktxx-AA/",
+    lienLabel: "Voir le réel",
+    accroche: "Trois crèmes de nuit, choisies par une professionnelle.",
+    projet: [
+      "Un exemple de contenu organique signé Sarah-Joyce, Skintelligence : les trois crèmes de nuit de parapharmacie qu’elle conseille le plus.",
+      "Un format court et pratique, qui aide sa communauté à s’y retrouver dans le rayon."
+    ],
+    pourquoi: [
+      ["Une sélection libre", "Des produits qu’elle recommande de sa propre initiative."],
+      ["Un format simple à retenir", "Trois références, à enregistrer et à partager."],
+      ["Le regard du comptoir", "Une expertise de terrain en dermocosmétique."]
     ]
   },
   {
@@ -349,6 +513,78 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "creatine-lea",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Carrousel info",
+    titre: "La créatine, pas seulement pour les sportifs",
+    talent: "lea",
+    categories: ["Santé", "Micronutrition"],
+    format: "Carrousel Instagram · idées reçues · contenu organique",
+    visuel: "assets/img/projet-lea-creatine.jpg",
+    cadrage: "50% 30%",
+    ratio: "livre",
+    lien: "https://www.instagram.com/p/DZHLClHDCwC/",
+    lienLabel: "Voir le carrousel",
+    accroche: "Démonter les idées reçues sur l’un des compléments les plus étudiés.",
+    projet: [
+      "Un exemple de contenu organique signé Léa, Les Conseils Pharma de Léa : un carrousel qui revient sur ce qu’est la créatine, sur les idées reçues qui l’entourent, sur ses mécanismes et sur un protocole simple pour commencer.",
+      "Léa rappelle aussi qu’en cas de traitement médical, il faut toujours demander l’avis de son médecin ou de son pharmacien, et invite sa communauté à proposer le prochain complément à décrypter."
+    ],
+    pourquoi: [
+      ["Le décryptage d’une pharmacienne", "Un sujet souvent mal expliqué, repris avec rigueur."],
+      ["Une approche responsable", "Le rappel de l’avis médical accompagne les conseils."],
+      ["Un format participatif", "La communauté choisit les sujets suivants."]
+    ]
+  },
+  {
+    id: "neurotransmetteurs-lea",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Carrousel info",
+    titre: "Votre équilibre émotionnel dépend de 4 molécules",
+    talent: "lea",
+    categories: ["Santé", "Micronutrition"],
+    format: "Carrousel Instagram · information santé · contenu organique",
+    visuel: "assets/img/projet-lea-neurotransmetteurs.jpg",
+    cadrage: "50% 40%",
+    ratio: "livre",
+    lien: "https://www.instagram.com/p/Dc2o48PjicA/",
+    lienLabel: "Voir le carrousel",
+    accroche: "Acétylcholine, dopamine, sérotonine, GABA : laquelle vous fait défaut ?",
+    projet: [
+      "Un exemple de contenu organique signé Léa, Les Conseils Pharma de Léa : un carrousel qui explique comment quatre molécules, l’acétylcholine, la dopamine, la sérotonine et le GABA, participent à l’énergie, à l’humeur, à la concentration et au sommeil.",
+      "Pour chaque profil, un signe à reconnaître, puis une invitation à enregistrer le carrousel et à échanger en commentaire."
+    ],
+    pourquoi: [
+      ["Vulgariser la science", "Un sujet complexe, rendu clair par une docteure en pharmacie."],
+      ["Un format à enregistrer", "Un carrousel que la communauté garde et partage."],
+      ["Une conversation ouverte", "Chacun est invité à dire quel profil lui ressemble."]
+    ]
+  },
+  {
+    id: "energie-cerveau-lea",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Réel info",
+    titre: "3 ennemis silencieux pour votre cerveau",
+    talent: "lea",
+    categories: ["Santé"],
+    format: "Réel Instagram · prévention · contenu organique",
+    visuel: "assets/img/projet-lea-energie.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DcknUS3Cuvh/",
+    lienLabel: "Voir le réel",
+    accroche: "Fatigue de décision, glycémie du matin, écrans le soir.",
+    projet: [
+      "Un exemple de contenu organique signé Léa, Les Conseils Pharma de Léa : trois ennemis silencieux de l’énergie cognitive, la fatigue de décision, la glycémie du matin et les écrans le soir.",
+      "La bonne nouvelle, rappelle-t-elle : ils se neutralisent. Le réel invite la communauté à dire en commentaire celui dans lequel elle se reconnaît."
+    ],
+    pourquoi: [
+      ["Un message de prévention", "Des gestes du quotidien expliqués avec la légitimité d’une pharmacienne."],
+      ["Une accroche efficace", "Trois points, faciles à retenir."],
+      ["Un échange avec la communauté", "La question posée à la fin ouvre le dialogue."]
+    ]
+  },
+  {
     id: "recette-healthy-lea",
     sansCollab: true, /* contenu sans collaboration : classé à part */
     marque: "Recette healthy",
@@ -394,6 +630,28 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "madame-d-skintelligence",
+    marque: "Madame D",
+    talent: "skintelligence",
+    categories: ["Skincare"],
+    format: "Réel Instagram · routine anti-âge",
+    visuel: "assets/img/projet-sj-madame-d.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/Dd65QTYx2UO/",
+    lienLabel: "Voir le réel",
+    accroche: "Une routine simple, efficace et raisonnable.",
+    projet: [
+      "Pour Madame D, Sarah-Joyce (Skintelligence) répond au message qu’elle reçoit le plus : comment construire une routine skincare simple, efficace et raisonnable. Elle présente une routine anti-âge avec les produits de la marque.",
+      "Un contenu pédagogique en collaboration commerciale clairement annoncée, porté par son regard de professionnelle de la dermocosmétique."
+    ],
+    pourquoi: [
+      ["Une demande réelle", "Le contenu répond à la question que sa communauté lui pose le plus."],
+      ["Une routine claire", "Des produits présentés dans un usage concret."],
+      ["Une collaboration transparente", "La mention de collaboration commerciale est indiquée."]
+    ]
+  },
+  {
     id: "substance-of-light-skintelligence",
     marque: "Substance of Light",
     talent: "skintelligence",
@@ -413,6 +671,78 @@ window.BAGHERA_PROJETS = [
       ["Un décor qui crédibilise", "La pharmacie ancre le produit dans un univers de conseil et de confiance."],
       ["Un vrai dialogue", "Créatrice et marque échangent : le contenu informe avant de vendre."],
       ["Un conseil qui marque", "« Une routine anti-âge ne sert à rien sans protection solaire », soutenu par un code promo dédié."]
+    ]
+  },
+  {
+    id: "tete-de-lit-allison",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Déco",
+    titre: "Une tête de lit effet coup de cœur",
+    talent: "allison",
+    categories: ["Déco", "Immobilier"],
+    format: "Réel Instagram · astuce déco · contenu organique",
+    visuel: "assets/img/projet-allison-tete-de-lit.jpg",
+    cadrage: "50% 60%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DXFBOnPgnvQ/",
+    lienLabel: "Voir le réel",
+    accroche: "3,60 m de large, posée en 30 minutes : la déco qui change une chambre.",
+    projet: [
+      "Un exemple de contenu organique signé Allison Jungling : une tête de lit de 3,60 m de large, pour 220 €, posée en 30 minutes, avec ses conseils de pose.",
+      "Un contenu pratique qui a fait réagir sa communauté, invitée à commenter pour recevoir la liste du matériel : plus de 1 300 commentaires."
+    ],
+    pourquoi: [
+      ["Un résultat visible", "Un avant-après concret, facile à reproduire."],
+      ["Une communauté très active", "Plus de 1 300 commentaires pour recevoir la liste."],
+      ["Un regard de professionnelle de l’immobilier", "L’art de valoriser un logement avec un budget maîtrisé."]
+    ]
+  },
+  {
+    id: "passer-a-laction-allison",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Inspiration",
+    titre: "Je n’étais pas prête !",
+    talent: "allison",
+    categories: ["Immobilier", "Finance"],
+    format: "Carrousel Instagram · motivation · contenu organique",
+    visuel: "assets/img/projet-allison-passer-a-laction.jpg",
+    cadrage: "50% 30%",
+    ratio: "livre",
+    lien: "https://www.instagram.com/p/DXw4mATgqJ0/",
+    lienLabel: "Voir le carrousel",
+    accroche: "On n’est jamais vraiment prêt : c’est l’action qui rend prêt.",
+    projet: [
+      "Un exemple de contenu organique signé Allison Jungling : un carrousel où elle raconte qu’elle n’était pas prête quand elle s’est lancée.",
+      "Son message : on n’est jamais réellement prêt, c’est le passage à l’action qui rend prêt, il ne faut pas attendre le moment idéal."
+    ],
+    pourquoi: [
+      ["Un récit personnel", "Son parcours sert d’exemple à celles et ceux qui hésitent."],
+      ["Un message clair", "Une idée simple, qui donne envie d’agir."],
+      ["Une communauté inspirée", "Un format qui crée de la proximité."]
+    ]
+  },
+  {
+    id: "page-tournee-allison",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Immobilier",
+    titre: "J’ai officiellement tourné la page",
+    talent: "allison",
+    categories: ["Immobilier"],
+    format: "Carrousel Instagram · coulisses · contenu organique",
+    visuel: "assets/img/projet-allison-page-tournee.jpg",
+    cadrage: "50% 30%",
+    ratio: "livre",
+    lien: "https://www.instagram.com/p/DUGzrnPAtJ6/",
+    lienLabel: "Voir le carrousel",
+    accroche: "La vente d’une maison gardée près de sept ans, racontée de l’intérieur.",
+    projet: [
+      "Un exemple de contenu organique signé Allison Jungling : la vente de sa maison, qu’elle avait depuis presque sept ans, racontée au moment de la signature chez le notaire.",
+      "Un contenu intime qui montre son quotidien d’investisseuse et suscite la curiosité jusqu’à la dernière image."
+    ],
+    pourquoi: [
+      ["Les coulisses du métier", "La communauté vit une étape réelle d’un projet immobilier."],
+      ["Une accroche qui retient", "La dernière photo réserve une surprise, qui pousse à faire défiler."],
+      ["Une experte qui montre l’exemple", "Elle partage ses propres expériences, pas seulement des conseils."]
     ]
   },
   {
@@ -457,6 +787,78 @@ window.BAGHERA_PROJETS = [
       ["Une mise en situation crédible", "Un vrai chantier, une vraie poussière : le produit fait ses preuves devant la communauté."],
       ["Une experte de l’habitat", "Investisseuse immobilière, Allison vit les travaux au quotidien : son avis a du poids."],
       ["Un produit adopté", "Le Pencilvac s’installe dans sa nouvelle maison, bien au-delà de la collaboration."]
+    ]
+  },
+  {
+    id: "brownie-nina",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Recette healthy",
+    titre: "Le brownie version diététicienne",
+    talent: "nina",
+    categories: ["Santé", "Micronutrition"],
+    format: "Réel Instagram · recette · contenu organique",
+    visuel: "assets/img/projet-nina-brownie.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DVG6ibciGM0/",
+    lienLabel: "Voir le réel",
+    accroche: "Une recette moins riche, à intégrer au quotidien, sans culpabiliser.",
+    projet: [
+      "Un exemple de contenu organique signé Nina (Nina.Lsy) : une recette de brownie moins riche et plus intéressante sur le plan nutritionnel, que l’on peut intégrer plus souvent dans son quotidien.",
+      "Elle le précise : aucun aliment ne fait à lui seul grossir ou maigrir, et un brownie classique reste tout à fait compatible avec ses objectifs. Un contenu qui a rassemblé environ 70 000 mentions « J’aime » et 12 000 commentaires."
+    ],
+    pourquoi: [
+      ["Une audience massive", "Environ 12 000 commentaires pour recevoir la recette."],
+      ["Un discours équilibré", "Pas d’interdit ni de culpabilité : l’approche d’une diététicienne."],
+      ["Une recette concrète", "Un contenu utile, que l’on garde et que l’on partage."]
+    ]
+  },
+  {
+    id: "crash-test-nina",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Crash test recettes",
+    titre: "Crash test recettes, épisode 1",
+    talent: "nina",
+    categories: ["Santé", "Micronutrition"],
+    format: "Série Instagram · test de recettes · contenu organique",
+    visuel: "assets/img/projet-nina-petit-dej.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DZxf0VqoNIX/",
+    lienLabel: "Voir le réel",
+    accroche: "Les recettes vues sur les réseaux, testées par une diététicienne.",
+    projet: [
+      "Un exemple de contenu organique signé Nina (Nina.Lsy) : le premier épisode d’une série où elle teste les recettes vues sur les réseaux et dit si elles sont vraiment bonnes et équilibrées.",
+      "Préparation en moins de 10 minutes, goût, équilibre, note finale de 9 sur 10 : une grille claire, et un message privé pour recevoir la recette."
+    ],
+    pourquoi: [
+      ["Un format en série", "Un rendez-vous que la communauté attend et suit."],
+      ["Un avis argumenté", "Temps, goût, équilibre et note : un test transparent."],
+      ["Le regard d’une diététicienne", "La validation d’une professionnelle de la nutrition."]
+    ]
+  },
+  {
+    id: "cru-cuit-nina",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Conseil nutrition",
+    titre: "Cru ou cuit : l’erreur à éviter",
+    talent: "nina",
+    categories: ["Santé", "Micronutrition"],
+    format: "Réel Instagram · conseil · contenu organique",
+    visuel: "assets/img/projet-nina-cru-cuit.jpg",
+    cadrage: "50% 65%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DWrOku1ogcx/",
+    lienLabel: "Voir le réel",
+    accroche: "Le poids des aliments change beaucoup entre cru et cuit.",
+    projet: [
+      "Un exemple de contenu organique signé Nina (Nina.Lsy) : elle alerte sur une erreur fréquente, le poids des aliments pouvant beaucoup varier entre cru et cuit, ce qui perturbe l’équilibre si l’on n’y fait pas attention.",
+      "En tant que diététicienne, elle précise qu’elle calcule toujours en cru, pour éviter les erreurs entre l’avant et l’après cuisson."
+    ],
+    pourquoi: [
+      ["Un conseil immédiatement utile", "Un réflexe simple à adopter en cuisine."],
+      ["Une experte qui explique", "La méthode d’une diététicienne, partagée clairement."],
+      ["Un contenu très suivi", "Plus de 30 000 mentions « J’aime »."]
     ]
   },
   {

@@ -97,7 +97,7 @@
     return '<a class="carte" href="#projet-' + p.id + '">' +
       '<img src="' + p.visuel + '" alt="" loading="lazy" style="object-position:' + (p.cadrage || "50% 30%") + '">' +
       '<div class="haut"><div class="marque">' + esc(p.marque) + '</div><span class="avec">avec ' + esc(p.avec || (t ? t.nom : "")) + '</span></div>' +
-      '<div class="tags">' + (p.sansCollab ? '<span class="tag sc">Sans collaboration</span>' : "") + p.categories.map(function (c, i) { return '<span class="tag' + (i === 0 ? " o" : "") + '">' + esc(c) + '</span>'; }).join("") + '</div>' +
+      '<div class="tags">' + (p.sansCollab ? '<span class="tag sc">Organique</span>' : "") + p.categories.map(function (c, i) { return '<span class="tag' + (i === 0 ? " o" : "") + '">' + esc(c) + '</span>'; }).join("") + '</div>' +
       '</a>';
   }
   function telHTML(p, t, cls) {
@@ -255,7 +255,7 @@
           return liste.length ? '<section class="autres" style="padding-top:0"><div class="wrap"><h2>' + titre + '</h2><div class="rangee">' +
             liste.map(function (x) { return carteHTML(x); }).join("") + '</div></div></section>' : "";
         };
-        return bloc('Ses collaborations <em class="s">avec Baghera</em>', collabs) + bloc('Ses contenus et interviews <em class="s">sans collaboration</em>', contenus);
+        return bloc('Ses collaborations <em class="s">avec Baghera</em>', collabs) + bloc('Ses contenus <em class="s">organiques</em>', contenus);
       })();
     $$("#v-talent .ref-logo img").forEach(function (img) {
       var f = function () { ajusterLogo(img, 5200, 28, 52); };
