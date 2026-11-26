@@ -382,7 +382,7 @@ body.menu-ouvert { overflow: hidden; }
 .piliers-3 { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .fondatrices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
 .fondatrice .photo { aspect-ratio: 4/5; border-radius: var(--r); overflow: hidden; }
-.fondatrice .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.fondatrice .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .fondatrice h3 { margin-top: 18px; }
 .fondatrice .role { font-family: var(--f-serif); font-style: italic; font-size: 1.2rem; color: var(--brule); }
 .fondatrice p { margin-top: 10px; font-size: .98rem; }
@@ -877,3 +877,27 @@ fieldset.profil legend { font: 600 .78rem var(--f-display); letter-spacing: .06e
 .fiche-talent .bio strong { font-weight: 800; font-family: var(--f-display); }
 .fiche-talent .bio strong.n { color: var(--nuit); }
 .fiche-talent .bio strong.o { color: var(--orange); }
+
+/* Équipe : bulles du haut aux trois couleurs de la marque (marron, orange, blanc à contour noir) */
+.piliers-3 .chip:nth-child(3) { background: #fff; color: var(--nuit); box-shadow: inset 0 0 0 1.5px var(--nuit); }
+
+/* Projets : galerie de photos sous le texte */
+.projet-galerie { padding-block: 0 clamp(36px, 5vw, 64px); }
+.projet-galerie .galerie { margin-top: 0; }
+
+/* Projets : collaborations / contenus sans collaboration */
+.titre-bloc { font: 800 clamp(1.5rem, 2.6vw, 2rem)/1.1 var(--f-display); margin: 8px 0 22px; color: var(--brun); }
+#bloc-contenus { margin-top: clamp(44px, 6vw, 80px); }
+.sous-titre-bloc { margin: -10px 0 22px; max-width: 62ch; }
+.tag.sc { background: var(--creme); color: var(--brun); box-shadow: inset 0 0 0 1px var(--brun); }
+
+/* Accompagnement stratégique : section resserrée, moins d'espace vide */
+#offre-accompagnement { padding-block: clamp(40px, 5vw, 64px); }
+#offre-accompagnement .as-tete { grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 56px); }
+#offre-accompagnement .as-photo { aspect-ratio: 4 / 3; }
+#offre-accompagnement .as-photo img { object-position: 50% 45%; }
+#offre-accompagnement .objectifs { margin-top: clamp(32px, 4vw, 52px); }
+#offre-accompagnement .objectifs .enjeux { margin-top: 20px; }
+#offre-accompagnement .frise { margin-top: clamp(28px, 3.5vw, 44px); }
+#offre-accompagnement .cta-duo { margin-top: 0; }
+@media (max-width: 860px) { #offre-accompagnement .as-photo { aspect-ratio: 4 / 3; max-width: none; } }
