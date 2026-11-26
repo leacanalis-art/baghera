@@ -2,8 +2,8 @@
 (function () {
   "use strict";
 
-  var PROJETS = window.BAGHERA_PROJETS || [];
-  var TALENTS = (window.BAGHERA_TALENTS || []).slice();
+  var PROJETS = (window.BAGHERA_PROJETS || []).filter(function (p) { return !p.masque; });
+  var TALENTS = (window.BAGHERA_TALENTS || []).filter(function (t) { return !t.masque; });
   (function () {
     var o = window.BAGHERA_ORDRE_TALENTS || [];
     TALENTS.sort(function (a, b) { var i = o.indexOf(a.id), k = o.indexOf(b.id); return (i < 0 ? 99 : i) - (k < 0 ? 99 : k); });
@@ -53,13 +53,13 @@
   /* ---------- Savoir-faire : carrés qui défilent ---------- */
   var CARRES = [
     ["Réels & posts", "Le conseil <em>en 60 secondes</em>", "Des contenus courts et pédagogiques, pensés pour être partagés et sauvegardés.", "assets/img/formats/reels.jpg", "70% 25%"],
-    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à une créatrice passionnée.", "assets/img/formats/youtube.jpg", "35% 40%"],
-    ["Podcasts", "La parole <em>de passionnée</em>", "Des épisodes qui installent la marque dans la durée.", "assets/img/formats/podcasts.jpg", "50% 30%"],
-    ["Tournages", "Au cœur <em>du terrain</em>", "En pharmacie, en laboratoire ou dans les coulisses d’une marque.", "assets/img/formats/tournages.jpg", "60% 35%"],
+    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à une créatrice experte.", "assets/img/formats/youtube.jpg", "40% 50%"],
+    ["Podcasts", "La parole <em>de passionnée</em>", "Des épisodes qui installent la marque dans la durée.", "assets/img/formats/podcasts.jpg", "50% 55%"],
+    ["Tournages", "Au cœur <em>du terrain</em>", "En pharmacie, en laboratoire ou dans les coulisses d’une marque.", "assets/img/formats/tournages.jpg", "50% 32%"],
     ["Conférences", "Ateliers <em>& webinars</em>", "Créer de la proximité et de la crédibilité, en présentiel ou en ligne.", "assets/img/formats/conferences.jpg", "50% 25%"],
-    ["Événements", "Soirées <em>& lancements</em>", "Casting de créateurs et couverture en influence de vos temps forts.", "assets/img/formats/evenements.jpg", "50% 18%"],
-    ["Webséries", "Raconter <em>en épisodes</em>", "Des concepts éditoriaux qui fidélisent une audience.", "assets/img/formats/webseries.jpg", "40% 72%"],
-    ["Local", "Toulouse <em>& le Sud</em>", "Des activations avec des créateurs de la région.", "assets/img/formats/local.jpg", "50% 45%"]
+    ["Événements", "Soirées <em>& lancements</em>", "Casting de créateurs et couverture en influence de vos temps forts.", "assets/img/formats/evenements.jpg", "50% 42%"],
+    ["Webséries", "Raconter <em>en épisodes</em>", "Des concepts éditoriaux qui fidélisent une audience.", "assets/img/formats/webseries.jpg", "50% 35%"],
+    ["Local", "Toulouse <em>& le Sud</em>", "Des activations avec des créateurs de la région.", "assets/img/formats/local.jpg", "50% 60%"]
   ];
   function carreHTML(c, cache) {
     return '<a class="carre" href="#projets"' + (cache ? ' aria-hidden="true" tabindex="-1"' : "") + '>' +
@@ -97,7 +97,7 @@
     return '<a class="carte" href="#projet-' + p.id + '">' +
       '<img src="' + p.visuel + '" alt="" loading="lazy" style="object-position:' + (p.cadrage || "50% 30%") + '">' +
       '<div class="haut"><div class="marque">' + esc(p.marque) + '</div><span class="avec">avec ' + esc(p.avec || (t ? t.nom : "")) + '</span></div>' +
-      '<div class="tags">' + p.categories.map(function (c, i) { return '<span class="tag' + (i === 0 ? " o" : "") + '">' + esc(c) + '</span>'; }).join("") + '</div>' +
+      '<div class="tags">' + (p.sansCollab ? '<span class="tag sc">Sans collaboration</span>' : "") + p.categories.map(function (c, i) { return '<span class="tag' + (i === 0 ? " o" : "") + '">' + esc(c) + '</span>'; }).join("") + '</div>' +
       '</a>';
   }
   function telHTML(p, t, cls) {
@@ -112,7 +112,8 @@
   }
   var PRIO = window.BAGHERA_ACCUEIL_PRIORITE || [];
   var ordreAccueil = PRIO.map(function (id) { return PROJETS.find(function (p) { return p.id === id; }); }).filter(Boolean)
-    .concat(PROJETS.filter(function (p) { return PRIO.indexOf(p.id) < 0; }));
+    .concat(PROJETS.filter(function (p) { return PRIO.indexOf(p.id) < 0; }))
+    .filter(function (p) { return !p.sansCollab; });
   $("#carrousel").innerHTML = ordreAccueil.map(function (p) { return carteHTML(p); }).join("");
   $$("[data-defile]").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -163,7 +164,7 @@
   /* Liste répétée pour que la bande tourne sans trou et que les 3 couleurs s'enchaînent sans rupture */
   var serie = AVIS.slice();
   while (AVIS.length && (serie.length % 3 !== 0 || serie.length < 9)) serie = serie.concat(AVIS);
-  $("#avis-grille").innerHTML = serie.map(function (a) { return avisHTML(a, false); }).join("") +
+  if ($("#avis-grille")) $("#avis-grille").innerHTML = serie.map(function (a) { return avisHTML(a, false); }).join("") +
     serie.map(function (a) { return avisHTML(a, true); }).join("");
 
   /* ---------- Talents ---------- */
@@ -176,7 +177,12 @@
   $("#talents-page").innerHTML = TALENTS.map(talentHTML).join("");
 
   /* ---------- Projets : tous les projets, sans filtre ---------- */
-  $("#grille-projets").innerHTML = PROJETS.map(function (p) { return carteHTML(p); }).join("");
+  $("#grille-projets").innerHTML = PROJETS.filter(function (p) { return !p.sansCollab; }).map(function (p) { return carteHTML(p); }).join("");
+  var contenus = PROJETS.filter(function (p) { return p.sansCollab; });
+  if ($("#bloc-contenus")) {
+    $("#bloc-contenus").hidden = !contenus.length;
+    $("#grille-contenus").innerHTML = contenus.map(function (p) { return carteHTML(p); }).join("");
+  }
 
   /* ---------- Fiche projet ---------- */
   function rendreProjet(id) {
@@ -211,6 +217,7 @@
       '<div><h2>Pourquoi <em class="s">ça marche</em></h2><div class="raisons">' +
       p.pourquoi.map(function (r) { return '<div class="raison"><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></div>'; }).join("") +
       '</div></div></div></section>' +
+      (p.galerie && p.galerie.length ? '<section class="projet-galerie"><div class="wrap">' + galerieHTML({ galerie: p.galerie, nom: p.titre || p.marque }) + '</div></section>' : "") +
       '<section class="autres"><div class="wrap"><h2>D’autres <em class="s">projets</em></h2><div class="rangee">' +
       autres.map(function (x) { return carteHTML(x); }).join("") + '</div></div></section>';
     document.title = (p.titre || (p.marque + " × " + avec)) + " — Baghera";
@@ -229,15 +236,27 @@
       '<div><span class="eyebrow">@' + esc(t.handle) + '</span>' +
       '<h1 style="margin-top:12px">' + esc(t.nom) + '</h1><div class="exp">' + esc(t.expertise) + '</div>' +
       '<div class="reseaux">' + t.reseaux.map(function (r) { return '<a href="' + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + '</a>'; }).join("") + '</div>' +
-      '<div class="bio">' + t.bio.map(function (b) { return "<p>" + esc(b) + "</p>"; }).join("") + '</div>' +
+      '<div class="bio">' + (function () {
+        var k = 0; /* les passages entre ** alternent gras noir / gras orange */
+        return t.bio.map(function (b) {
+          return "<p>" + esc(b).replace(/\*\*(.+?)\*\*/g, function (_, m) { return '<strong class="' + (k++ % 2 ? "o" : "n") + '">' + m + "</strong>"; }) + "</p>";
+        }).join("");
+      })() + '</div>' +
       activationsHTML(t) + galerieHTML(t) +
       '<div class="collab"><h3>Vous souhaitez collaborer avec ' + esc(t.court) + ' ?</h3>' +
       '<p>Échangeons sur vos projets et vos valeurs pour concevoir ensemble des prises de parole fortes, qui valorisent votre marque avec authenticité et crédibilité.</p>' +
       '<div class="adresse"><span>' + esc(t.email) + '</span><button class="copier" type="button" data-copier="' + esc(t.email) + '">Copier</button></div></div>' +
       '</div></div></div>' +
       refsHTML(t.references) +
-      (ses.length ? '<section class="autres" style="padding-top:0"><div class="wrap"><h2>Ses projets <em class="s">avec Baghera</em></h2><div class="rangee">' +
-        ses.map(function (x) { return carteHTML(x); }).join("") + '</div></div></section>' : "");
+      (function () {
+        var collabs = ses.filter(function (x) { return !x.sansCollab; });
+        var contenus = ses.filter(function (x) { return x.sansCollab; });
+        var bloc = function (titre, liste) {
+          return liste.length ? '<section class="autres" style="padding-top:0"><div class="wrap"><h2>' + titre + '</h2><div class="rangee">' +
+            liste.map(function (x) { return carteHTML(x); }).join("") + '</div></div></section>' : "";
+        };
+        return bloc('Ses collaborations <em class="s">avec Baghera</em>', collabs) + bloc('Ses contenus et interviews <em class="s">sans collaboration</em>', contenus);
+      })();
     $$("#v-talent .ref-logo img").forEach(function (img) {
       var f = function () { ajusterLogo(img, 5200, 28, 52); };
       if (img.complete) f(); else img.addEventListener("load", f);
@@ -374,11 +393,21 @@
     var bouton = f.querySelector('button[type="submit"]');
     bouton.disabled = true;
     retour.textContent = "Envoi en cours…";
-    fetch(window.BAGHERA_FORMULAIRE, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(donnees)
-    }).then(function (r) {
+    /* 1) Netlify Forms (quand le site est hébergé sur Netlify) ; 2) sinon FormSubmit en secours */
+    var corps = new URLSearchParams({
+      "form-name": "contact", profil: f.elements.profil.value, nom: donnees.Nom, societe: donnees["Société / compte"],
+      email: donnees.email, tel: donnees["Téléphone"], sujet: donnees.Sujet, message: donnees.Message
+    }).toString();
+    var viaFormSubmit = function () {
+      return fetch(window.BAGHERA_FORMULAIRE, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(donnees)
+      });
+    };
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: corps })
+      .then(function (r) { return r.ok ? r : viaFormSubmit(); }, viaFormSubmit)
+      .then(function (r) {
       if (!r.ok) throw new Error("envoi");
       retour.textContent = "Merci ! Votre message a bien été envoyé. Nous vous répondons très vite.";
       f.reset();

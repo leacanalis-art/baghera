@@ -3,7 +3,7 @@
    Les catégories des filtres sont calculées automatiquement à partir du champ "categories". */
 
 /* Catégories des filtres de la page Projets, dans l'ordre d'affichage. */
-window.BAGHERA_CATEGORIES = ["Santé", "Skincare", "Immobilier", "Finance", "Micronutrition", "Déco", "Engagement", "Culture"];
+window.BAGHERA_CATEGORIES = ["Santé", "Skincare", "Immobilier", "Finance", "Micronutrition", "Déco", "Engagement", "Culture", "Mode"];
 
 window.BAGHERA_PROJETS = [
   {
@@ -35,6 +35,200 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "cest-qui-la-boss",
+    marque: "C’est qui la Boss ?",
+    titre: "C’est qui la Boss ? éditions Toulouse et Paris",
+    avec: "nos talents",
+    partenaires: "C’est qui la Boss ? · Baghera",
+    categories: ["Engagement"],
+    format: "Événement · conférences · éditions Toulouse et Paris",
+    visuel: "assets/img/projet-cqlb-lea.jpg",
+    cadrage: "50% 40%",
+    galerie: ["assets/img/gal-cqlb-3.jpg", "assets/img/gal-cqlb-1.jpg", "assets/img/gal-cqlb-4.jpg", "assets/img/gal-cqlb-2.jpg"],
+    talents: ["lea", "allison", "emturian"],
+    ratio: "livre",
+    handle: "agencebaghera",
+    lien: "https://www.instagram.com/agencebaghera/",
+    lienLabel: "Voir le compte de l’agence",
+    accroche: "Quand l’expertise de nos talents monte sur scène.",
+    projet: [
+      "Baghera est présente sur C’est qui la Boss ?, le rendez-vous dédié aux entrepreneuses, avec des prises de parole de nos talents sur scène, dans les éditions de Toulouse et de Paris.",
+      "Léa, Les Conseils Pharma de Léa, Allison Jungling et Emeline (Emturian) y ont notamment pris la parole, chacune sur son domaine : santé et micronutrition, immobilier et investissement, beauté clean."
+    ],
+    pourquoi: [
+      ["L’expertise sur scène", "Un créateur expert apporte de la valeur bien au-delà d’un Reel : conférences, tables rondes, interviews."],
+      ["Deux villes, deux éditions", "Toulouse et Paris : des rendez-vous qui ancrent l’agence dans ses territoires."],
+      ["Des prises de parole sur mesure", "Chaque talent s’exprime sur le sujet qu’il maîtrise, devant un public concerné."]
+    ]
+  },
+  {
+    id: "ballot-flurin-emturian",
+    marque: "Ballot-Flurin",
+    talent: "emturian",
+    categories: ["Santé", "Micronutrition"],
+    format: "Réel Instagram · découverte locale · produits de la ruche",
+    visuel: "assets/img/projet-emturian-ballot.jpg",
+    cadrage: "50% 45%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DdW_6KRKO1Q/",
+    lienLabel: "Voir le réel",
+    accroche: "Une pépite locale, dénichée par une créatrice qui connaît bien le terrain.",
+    projet: [
+      "Pour Ballot-Flurin, marque de produits de la ruche installée près de chez elle, Emeline (Emturian) présente une découverte locale dont elle recommande les produits pour les changements de saison.",
+      "Un contenu authentique, avec une mention de partenariat claire et un code promo dédié à sa communauté. Le genre de découverte qu’elle aime partager, et qui met en lumière une marque de proximité."
+    ],
+    pourquoi: [
+      ["Une marque de proximité", "Une découverte locale, racontée avec le ton habituel d’Emeline."],
+      ["Une recommandation saisonnière", "Un usage concret, au moment où la communauté en a besoin."],
+      ["Un code promo dédié", "Une offre pour la communauté, qui permet de mesurer l’intérêt suscité."]
+    ]
+  },
+  {
+    id: "dupes-emturian",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Dupes skincare",
+    titre: "J’achète / j’achète pas : la version dupes",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · récap de dupes · sans marque",
+    visuel: "assets/img/projet-emturian-dupes.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/C7_8O11IGhd/",
+    lienLabel: "Voir le réel",
+    accroche: "Le format qui a fait sa signature : les dupes, au bon prix.",
+    projet: [
+      "Un exemple de contenu signé Emeline, Emturian, sans partenariat commercial : un récap « j’achète / j’achète pas » consacré aux dupes de produits skincare, à retenir pour faire les meilleurs choix au meilleur prix.",
+      "Un format pédagogique et bienveillant, qui a rassemblé plus de 75 000 mentions « J’aime » et qui appelle une suite : « On se fait une partie 2 ? »"
+    ],
+    pourquoi: [
+      ["Un format signature", "Les dupes et les bons plans beauté, au cœur de l’univers d’Emeline."],
+      ["Une audience engagée", "Un contenu très partagé, qui a généré des centaines de commentaires."],
+      ["Une approche non moralisatrice", "Aider sa communauté à faire les meilleurs choix, quand c’est possible."]
+    ]
+  },
+  {
+    id: "emturian-aroma-zone",
+    marque: "Aroma-Zone",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Collaboration annuelle · prises de parole régulières",
+    visuel: "assets/img/talent-emturian.jpg",
+    cadrage: "50% 25%",
+    ratio: "livre",
+    handle: "emturian",
+    lien: "https://www.instagram.com/p/DfH-uepq1bj/",
+    lienLabel: "Voir la dernière publication",
+    lien2: "https://www.instagram.com/emturian/",
+    lien2Label: "Voir le compte d’Emturian",
+    galerie: ["assets/img/gal-emturian-az-2.jpg"],
+    accroche: "Une relation dans la durée plutôt qu’une opération ponctuelle.",
+    projet: [
+      "Emturian collabore avec Aroma-Zone dans le cadre d’un partenariat annuel, complété régulièrement par des prises de parole spontanées.",
+      "Cette relation sur le long terme installe progressivement la marque dans l’univers de la créatrice : le produit apparaît naturellement dans ses contenus, et sa communauté comprend que la relation dépasse la simple opération commerciale.",
+      "Dernier exemple en date (30 octobre 2026) : Emeline présente une nouveauté Aroma-Zone, un format très pratique et 100 % d’origine naturelle, dans la lignée de sa série « Le phénomène Aroma-Zone »."
+    ],
+    pourquoi: [
+      ["Une collaboration dans la durée", "Un partenariat annuel qui laisse le temps d’installer la marque."],
+      ["Des prises de parole spontanées", "Entre deux temps forts, Emturian parle de la marque quand elle en a envie, avec son propre ton."],
+      ["Une communauté qui suit", "La répétition crée de la confiance : la recommandation devient naturelle."]
+    ]
+  },
+  {
+    id: "olisma-creatrices",
+    masque: true, /* en attente des informations et du visuel : retirer cette ligne pour l’afficher */
+    marque: "Olisma",
+    avec: "toutes nos créatrices",
+    talents: ["lea", "emturian", "clara", "allison", "skintelligence", "nina"],
+    categories: ["Santé", "Micronutrition"],
+    format: "Campagne · plusieurs créatrices",
+    visuel: "assets/img/offre-talents.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    handle: "agencebaghera",
+    lien: "https://www.instagram.com/agencebaghera/",
+    lienLabel: "Voir le compte de l’agence",
+    accroche: "Une campagne portée par plusieurs de nos créatrices.",
+    projet: [
+      "Une campagne Olisma construite avec l’ensemble de nos créatrices. Détails à compléter.",
+      "Texte à compléter avec Léa."
+    ],
+    pourquoi: [
+      ["À compléter", "À compléter."],
+      ["À compléter", "À compléter."],
+      ["À compléter", "À compléter."]
+    ]
+  },
+  {
+    id: "aroma-zone-toulouse",
+    marque: "Aroma-Zone",
+    titre: "Réouverture de la boutique Aroma-Zone à Toulouse",
+    avec: "l’équipe Aroma-Zone",
+    partenaires: "Aroma-Zone · Baghera",
+    categories: ["Skincare", "Engagement"],
+    format: "Événement · soirée de réouverture · casting de 60+ profils",
+    visuel: "assets/img/projet-aroma-zone-toulouse.jpg",
+    cadrage: "50% 40%",
+    ratio: "livre",
+    handle: "agencebaghera",
+    lien: "https://www.instagram.com/p/DezbG-zjPw0/",
+    lienLabel: "Voir la publication",
+    accroche: "Une boutique qui rouvre à Toulouse, plus de 60 profils pour faire vivre le temps fort.",
+    projet: [
+      "Baghera a géré toute la partie influence de la réouverture de la boutique Aroma-Zone à Toulouse : le casting de plus de 60 profils, créateurs de contenu et KOL (leaders d’opinion), réunis autour de cette soirée.",
+      "Un plaisir d’avoir accompagné les équipes Aroma-Zone sur ce temps fort, et de contribuer au développement de leur présence à Toulouse."
+    ],
+    pourquoi: [
+      ["Un casting de plus de 60 profils", "Créateurs de contenu et KOL sélectionnés par Baghera pour faire vivre ce temps fort."],
+      ["Un vrai moment d’événement", "Une soirée de réouverture pensée comme un temps fort, pour installer la boutique dans sa ville."],
+      ["Un accompagnement de bout en bout", "Baghera a pris en charge toute la partie influence de l’événement."]
+    ]
+  },
+  {
+    id: "halara-nastassja",
+    marque: "Halara",
+    talent: "nastassja",
+    categories: ["Mode"],
+    format: "Réel Instagram · 4 façons de porter la tendance",
+    visuel: "assets/img/projet-nastassja-halara.jpg",
+    cadrage: "50% 45%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DeuNj5Bt2UO/",
+    lienLabel: "Voir le réel",
+    accroche: "Une même pièce, quatre looks : la mode vue par une styliste.",
+    projet: [
+      "Pour Halara, Nastassja, styliste personnelle, présente le jean barrel, l’une des grandes tendances de l’automne-hiver 2026, et montre comment le porter de quatre façons : décontractée, professionnelle, chic et soirée.",
+      "Un contenu pédagogique et inspirant, pensé pour être enregistré, avec une mention de collaboration claire et des codes promo dédiés à sa communauté."
+    ],
+    pourquoi: [
+      ["L’œil d’une styliste", "Nastassja ne montre pas un produit : elle explique comment l’adapter à chaque occasion."],
+      ["Un format utile", "Quatre looks avec une seule pièce, un contenu que sa communauté enregistre et retrouve."],
+      ["Une collaboration transparente", "Partenariat annoncé et codes promo dédiés, dans le ton habituel de Nastassja."]
+    ]
+  },
+  {
+    id: "rsvp-nastassja",
+    marque: "RSVP Paris",
+    talent: "nastassja",
+    categories: ["Mode"],
+    format: "Réel Instagram · série « Color Match »",
+    visuel: "assets/img/projet-nastassja-rsvp.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DfFfmZ_NxKZ/",
+    lienLabel: "Voir le réel",
+    accroche: "Le marron, quatre façons de l’associer : le sac fait toute la différence.",
+    projet: [
+      "Pour RSVP Paris, Nastassja, styliste personnelle, signe un nouvel épisode de sa série « Color Match » : quatre associations de couleurs avec le marron, tendance incontournable de l’automne-hiver 2026, en jouant avec les sacs de la marque.",
+      "Marron et bleu marine, bordeaux, cognac ou vert : un contenu pédagogique qui montre comment un sac coloré transforme une tenue, avec une mention de collaboration claire et un lien envoyé en message privé à sa communauté."
+    ],
+    pourquoi: [
+      ["L’œil d’une styliste", "Nastassja explique comment associer les couleurs, au-delà de la simple mise en avant du produit."],
+      ["Une série qui fidélise", "Le « Color Match » est un rendez-vous récurrent, que sa communauté retrouve et enregistre."],
+      ["Un lien direct avec l’audience", "Un mot-clé en commentaire et le lien arrive en message privé : un format qui convertit."]
+    ]
+  },
+  {
     id: "etat-pur-lea",
     marque: "État Pur",
     talent: "lea",
@@ -56,6 +250,126 @@ window.BAGHERA_PROJETS = [
       ["Raconter plutôt que vendre", "Les consommateurs veulent savoir qui fabrique leurs produits : les métiers deviennent le cœur de la campagne."],
       ["Une pharmacienne comme guide", "Le regard de Léa, pharmacienne, donne de la crédibilité à chaque échange."],
       ["Un tournage, plusieurs formats", "Vidéos YouTube et contenus Instagram : un dispositif pensé pour durer bien au-delà de la première publication."]
+    ]
+  },
+  {
+    id: "sensibilisation-lea",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Sensibilisation",
+    titre: "Règles douloureuses : « pas normal » ?",
+    talent: "lea",
+    categories: ["Santé", "Engagement"],
+    format: "Réel Instagram · contenu de sensibilisation · sans marque",
+    visuel: "assets/img/projet-lea-sensibilisation.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DeqgrJiDv6P/",
+    lienLabel: "Voir le réel",
+    accroche: "Parler de santé des femmes, sans marque, avec la voix d’une pharmacienne.",
+    projet: [
+      "Un exemple de contenu de sensibilisation signé Léa, Les Conseils Pharma de Léa, sans partenariat commercial : « C’est normal d’avoir mal pendant les règles. » Non, pas à ce point.",
+      "En quelques secondes, Léa rappelle que des règles douloureuses qui font manquer les cours justifient d’en parler à un médecin, plutôt que de prendre son mal en patience. Une prise de parole simple et responsable, qui s’adresse notamment aux parents."
+    ],
+    pourquoi: [
+      ["Une pharmacienne qui parle santé", "Un sujet sensible, traité avec la légitimité d’une professionnelle."],
+      ["Un message court et clair", "Un format direct, facile à partager, qui invite à consulter."],
+      ["Un contenu sans marque", "La preuve qu’un créateur expert peut s’engager sur un sujet de santé pour lui-même, avant toute collaboration."]
+    ]
+  },
+  {
+    id: "desinfluence-skintelligence",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Désinfluence",
+    titre: "Je désinfluence ta skincare !",
+    talent: "skintelligence",
+    categories: ["Skincare"],
+    format: "Réel Instagram · désinfluence · sans marque",
+    visuel: "assets/img/projet-sj-desinfluence.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DeCtbhCxJjO/",
+    lienLabel: "Voir le réel",
+    accroche: "Garder son argent : la skincare décryptée sans complaisance.",
+    projet: [
+      "Un exemple de contenu signé Sarah-Joyce, Skintelligence, sans partenariat commercial : un réel de « désinfluence » dans lequel elle passe au crible des produits de soin pour dire ceux qui ne valent pas leur prix.",
+      "Un format franc et pédagogique, qui s’appuie sur son regard de professionnelle de la dermocosmétique."
+    ],
+    pourquoi: [
+      ["Une parole indépendante", "Sans marque derrière le contenu, la recommandation gagne en crédibilité."],
+      ["Un décryptage de professionnelle", "Sarah-Joyce lit les compositions et explique ce qui compte vraiment."],
+      ["Un format qui engage", "La désinfluence attire l’attention et fait réagir la communauté."]
+    ]
+  },
+  {
+    id: "parapharmacie-skintelligence",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Parapharmacie",
+    titre: "Les produits de parapharmacie qu’elle adore conseiller",
+    talent: "skintelligence",
+    categories: ["Skincare"],
+    format: "Réel Instagram · sélection de produits · sans marque",
+    visuel: "assets/img/projet-sj-parapharmacie.jpg",
+    cadrage: "50% 30%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DbOY1uhg4xH/",
+    lienLabel: "Voir le réel",
+    accroche: "Cinq produits qu’une professionnelle conseille vraiment.",
+    projet: [
+      "Un exemple de contenu signé Sarah-Joyce, Skintelligence, sans partenariat commercial : « 5 produits que j’adore conseiller », une sélection de parapharmacie issue de son expérience au comptoir.",
+      "Un contenu de conseil, simple et incarné, tourné devant une pharmacie."
+    ],
+    pourquoi: [
+      ["Le regard du comptoir", "Une parole de terrain, nourrie par l’expérience en pharmacie."],
+      ["Une sélection claire", "Cinq produits, une idée simple à retenir et à enregistrer."],
+      ["Un contenu qui inspire confiance", "Des recommandations choisies librement, sans marque."]
+    ]
+  },
+  {
+    id: "serums-skintelligence",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Sérums",
+    titre: "Top 3 des sérums de parapharmacie, selon ta problématique",
+    talent: "skintelligence",
+    categories: ["Skincare"],
+    format: "Réel Instagram · top 3 · sans marque",
+    visuel: "assets/img/projet-sj-serums.jpg",
+    cadrage: "50% 40%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DaiOvm6z64f/",
+    lienLabel: "Voir le réel",
+    accroche: "Trois sérums, trois problématiques de peau.",
+    projet: [
+      "Un exemple de contenu signé Sarah-Joyce, Skintelligence, sans partenariat commercial : un top 3 des sérums de parapharmacie, choisis selon la problématique de peau.",
+      "Un format pédagogique qui aide à s’y retrouver dans le rayon, avec l’expertise d’une professionnelle de la dermocosmétique."
+    ],
+    pourquoi: [
+      ["Un contenu utile", "Chacun trouve la réponse qui correspond à sa peau."],
+      ["Une expertise accessible", "Les actifs expliqués simplement, sans jargon."],
+      ["Un format facile à partager", "Un top court, à enregistrer et à envoyer."]
+    ]
+  },
+  {
+    id: "recette-healthy-lea",
+    sansCollab: true, /* contenu sans collaboration : classé à part */
+    marque: "Recette healthy",
+    titre: "Une brioche sans sucre ajouté, validée par trois enfants",
+    talent: "lea",
+    categories: ["Santé", "Micronutrition"],
+    format: "Carrousel Instagram · recette · sans marque",
+    visuel: "assets/img/projet-lea-recette.jpg",
+    cadrage: "50% 50%",
+    ratio: "livre",
+    lien: "https://www.instagram.com/p/DeQw0X6jBhc/",
+    lienLabel: "Voir la recette",
+    accroche: "Un petit-déjeuner équilibré, même quand on n’a pas le temps.",
+    projet: [
+      "Un exemple de contenu recette signé Léa, Les Conseils Pharma de Léa, sans partenariat commercial : une brioche moelleuse, sans sucre ajouté ni protéine en poudre, à base de skyr, d’avoine et d’œufs.",
+      "Le point de départ est un vrai besoin du quotidien : proposer à ses trois filles un petit-déjeuner équilibré, mieux que les tartines de pâte à tartiner. Une recette simple, à enregistrer, pensée pour les parents pressés."
+    ],
+    pourquoi: [
+      ["Un besoin concret", "Des parents qui manquent de temps le matin et cherchent des idées équilibrées."],
+      ["Une recette à enregistrer", "Ingrédients et étapes clairs : un contenu utile, que la communauté garde et partage."],
+      ["Un regard de professionnelle de santé", "La nutrition expliquée simplement par une pharmacienne, sans jargon."]
     ]
   },
   {
@@ -141,7 +455,7 @@ window.BAGHERA_PROJETS = [
     ],
     pourquoi: [
       ["Une mise en situation crédible", "Un vrai chantier, une vraie poussière : le produit fait ses preuves devant la communauté."],
-      ["Une passionnée de l’habitat", "Investisseuse immobilière, Allison vit les travaux au quotidien : son avis a du poids."],
+      ["Une experte de l’habitat", "Investisseuse immobilière, Allison vit les travaux au quotidien : son avis a du poids."],
       ["Un produit adopté", "Le Pencilvac s’installe dans sa nouvelle maison, bien au-delà de la collaboration."]
     ]
   },
@@ -189,6 +503,81 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "itw-clara-herstory",
+    sansCollab: true, /* interview / prise de parole : classée à part */
+    marque: "Herstory",
+    titre: "Clara Morgane se raconte pour Herstory",
+    avec: "Clara Morgane",
+    talent: "clara",
+    categories: ["Culture"],
+    format: "Interview vidéo · média Herstory",
+    visuel: "assets/img/projet-clara-itw-herstory.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/De9yZOCRqT_/",
+    lienLabel: "Voir l’interview",
+    accroche: "Une prise de parole forte, dans un média qui donne la parole aux femmes.",
+    projet: [
+      "Dans l’émission « Herstory Time », Clara Morgane revient sur ses débuts à la télévision et sur la femme qu’elle est devenue, à l’occasion de la sortie de sa première autobiographie.",
+      "Une interview intime et sincère, qui montre sa capacité à prendre la parole sur son parcours, dans un média suivi par une large audience."
+    ],
+    pourquoi: [
+      ["Une parole personnelle", "Clara raconte son parcours à la première personne."],
+      ["Un média à forte audience", "Une interview relayée auprès de milliers de personnes."],
+      ["Un moment clé de l’année", "Une prise de parole liée à la sortie de son livre."]
+    ]
+  },
+  {
+    id: "itw-clara-arthurgmz",
+    sansCollab: true, /* interview / prise de parole : classée à part */
+    marque: "Interview podcast",
+    titre: "Clara Morgane en interview avec @arthur.gmz",
+    avec: "Clara Morgane",
+    talent: "clara",
+    categories: ["Culture"],
+    format: "Interview vidéo · format podcast",
+    visuel: "assets/img/projet-clara-itw-arthur.jpg",
+    cadrage: "50% 25%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DeR3MpJiDKZ/",
+    lienLabel: "Voir l’interview",
+    accroche: "Un long échange en studio, face caméra.",
+    projet: [
+      "Clara Morgane est l’invitée d’une interview filmée en studio par @arthur.gmz, dans un format podcast vidéo, micro devant elle.",
+      "Un exemple de prise de parole longue, où elle développe son regard et son histoire."
+    ],
+    pourquoi: [
+      ["Un format long", "Le temps de développer un propos, loin du format court des réseaux."],
+      ["Une audience engagée", "Une publication très commentée par la communauté."],
+      ["Une image maîtrisée", "Un décor travaillé, une mise en scène sobre et chaleureuse."]
+    ]
+  },
+  {
+    id: "itw-clara-calfdm",
+    sansCollab: true, /* interview / prise de parole : classée à part */
+    marque: "Conversations avant la fin du monde",
+    titre: "Clara Morgane dans « Conversations avant la fin du monde »",
+    avec: "Clara Morgane",
+    talent: "clara",
+    categories: ["Culture"],
+    format: "Podcast · invitée de l’épisode",
+    visuel: "assets/img/projet-clara-itw-calfdm.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DerSivhoyWf/",
+    lienLabel: "Voir l’extrait",
+    accroche: "Un moment de sororité, en podcast.",
+    projet: [
+      "Clara Morgane est l’invitée d’un épisode du podcast « Conversations avant la fin du monde », disponible sur YouTube et sur toutes les plateformes d’écoute.",
+      "L’extrait relayé sur Instagram met en avant un échange chaleureux avec Lio, qui l’avait soutenue sur un plateau de télévision en 2001."
+    ],
+    pourquoi: [
+      ["Un podcast à forte audience", "Un extrait qui dépasse les 20 000 mentions « J’aime »."],
+      ["Un échange sincère", "Une conversation qui met en avant la sororité."],
+      ["Plusieurs plateformes", "L’épisode complet est disponible sur YouTube et en podcast."]
+    ]
+  },
+  {
     id: "clara-livre",
     marque: "Nouveau livre",
     titre: "Anatomie d’une métamorphose",
@@ -215,6 +604,7 @@ window.BAGHERA_PROJETS = [
   },
   {
     id: "solgar-kristy",
+    masque: true, /* collab avec Kristy, masquée avec elle */
     marque: "Solgar",
     talent: "kristy",
     categories: ["Micronutrition"],
@@ -247,9 +637,9 @@ window.BAGHERA_TALENTS = [
     handle: "les.conseils.pharma.de.lea",
     email: "lesconseilspharmadelea@influencebaghera.com",
     bio: [
-      "Docteure en pharmacie et pionnière de la création de contenu santé en France, Léa est devenue une référence incontournable sous le nom de @Les Conseils Pharma de Léa. Reconnue pour sa prise de parole accessible et responsable, elle s’est imposée comme une voix de confiance, auprès du grand public comme des professionnels de santé.",
-      "Spécialiste de la santé naturelle, elle est formatrice en micronutrition, titulaire d’un DU MAPS (Micro-nutrition Alimentation Prévention Santé) et d’un DU d’homéopathie. Auteure d’un ouvrage de référence décliné en livret pratique, elle met son savoir scientifique au service d’une approche pédagogique et concrète.",
-      "Installée à Aix-en-Provence et maman de trois filles, Léa fédère une communauté engagée à l’échelle nationale et locale. Sa rigueur et son éthique la conduisent à collaborer exclusivement avec des marques premium."
+      "Docteure en pharmacie et **pionnière de la création de contenu santé en France**, Léa est devenue une référence incontournable sous le nom de @Les Conseils Pharma de Léa. Reconnue pour sa prise de parole accessible et responsable, elle s’est imposée comme **une voix de confiance**, auprès du grand public comme des professionnels de santé.",
+      "Spécialiste de la santé naturelle, elle est **formatrice en micronutrition**, titulaire d’un DU MAPS (Micro-nutrition Alimentation Prévention Santé) et d’un DU d’homéopathie. Auteure d’un ouvrage de référence décliné en livret pratique, elle met son savoir scientifique au service d’**une approche pédagogique et concrète**.",
+      "Installée à Aix-en-Provence et maman de trois filles, Léa fédère une communauté engagée à l’échelle nationale et locale. Sa rigueur et son éthique la conduisent à **collaborer exclusivement avec des marques premium**."
     ],
     references: "SkinCeuticals · Filorga · Fortepharma · Vichy · Easypara · Pileje · Organyc · Aroma-Zone · Arkopharma · HAS · Bepanthen · Calmosine · Jonzac · Sanofi · Laboratoire ACM · CPAM · Jaldes · Caudalie",
     galerie: ["assets/img/gal-lea-1.jpg"],
@@ -269,9 +659,9 @@ window.BAGHERA_TALENTS = [
     handle: "emturian",
     email: "emturian@influencebaghera.com",
     bio: [
-      "@Emturian est une créatrice de contenu passionnée par la beauté responsable, naturelle et accessible. Elle a lancé son compte pour créer un espace de tips, de conseils et de dupes de produits clean et abordables. Elle fédère aujourd’hui plus de 400 000 abonnés.",
-      "Spécialisée dans la beauté clean, Emeline adopte une approche bienveillante et non moralisatrice, avec un objectif simple : aider sa communauté à faire les meilleurs choix, quand c’est possible.",
-      "Elle met en lumière les marques, des plus petites aux plus grandes, notamment à travers son concept d’interviews de marques sur YouTube. Son univers s’étend aujourd’hui à la food, au textile et au lifestyle, avec la beauté comme fil conducteur."
+      "@Emturian est une créatrice de contenu engagée pour **la beauté responsable, naturelle et accessible**. Elle a lancé son compte pour créer un espace de tips, de conseils et de dupes de produits clean et abordables. Elle fédère aujourd’hui **plus de 400 000 abonnés**.",
+      "Spécialisée dans la beauté clean, Emeline adopte **une approche bienveillante et non moralisatrice**, avec un objectif simple : aider sa communauté à faire les meilleurs choix, quand c’est possible.",
+      "Elle met en lumière les marques, des plus petites aux plus grandes, notamment à travers son concept d’**interviews de marques sur YouTube**. Son univers s’étend aujourd’hui à la food, au textile et au lifestyle, avec la beauté comme fil conducteur."
     ],
     references: "Soraali · Aroma-Zone · Yepoda · Jow · Cosmebio · Respire · Wild · Oden · Cultiv · Cica Manuka · Cut by Fred · Jonzac · Respectueuse · Melvita · Kreme · Sanoflore · Ballot-Flurin · WIA Cosmetics",
     activations: ["Réels Instagram et TikTok", "Vidéos YouTube, interviews de marque", "Partenariat à l’année", "Lives Twitch", "Comparatifs et dupes"],
@@ -291,9 +681,9 @@ window.BAGHERA_TALENTS = [
     handle: "claramorgane",
     email: "alix.espenel@influencebaghera.com",
     bio: [
-      "Clara Morgane est une personnalité incontournable du paysage médiatique français, artiste polyvalente et entrepreneure audacieuse. Depuis plus de vingt ans, elle inspire le public par ses projets créatifs, ses apparitions télévisées et ses engagements artistiques.",
-      "Elle s’impose comme une voix influente sur les thèmes liés à la femme, à la créativité et au bien-être. Sur Instagram, où elle compte plus de 700 000 abonnés, elle met en lumière ses initiatives autour de la spiritualité, du bien-être, de la beauté et de l’émancipation féminine.",
-      "Avec son cabaret « Au 7e », elle célèbre la féminité et l’expression artistique entre danse, acrobaties, effeuillage burlesque et humour — une nouvelle preuve de sa capacité à allier créativité, scène et rayonnement médiatique."
+      "Clara Morgane est **une personnalité incontournable du paysage médiatique français**, artiste polyvalente et entrepreneure audacieuse. Depuis plus de vingt ans, elle inspire le public par ses projets créatifs, ses apparitions télévisées et ses engagements artistiques.",
+      "Elle s’impose comme une voix influente sur les thèmes liés à la femme, à la créativité et au bien-être. Sur Instagram, où elle compte **plus de 700 000 abonnés**, elle met en lumière ses initiatives autour de la spiritualité, du bien-être, de la beauté et de l’émancipation féminine.",
+      "Avec son **cabaret « Au 7e »**, elle célèbre la féminité et l’expression artistique entre danse, acrobaties, effeuillage burlesque et humour — une nouvelle preuve de sa capacité à allier créativité, scène et rayonnement médiatique."
     ],
     references: "",
     activations: ["Posts et stories Instagram", "Interviews et prises de parole médias", "Événements et soirées", "Partenariats beauté et bien-être"],
@@ -314,9 +704,9 @@ window.BAGHERA_TALENTS = [
     handle: "allisonjungling",
     email: "allisonjungling@influencebaghera.com",
     bio: [
-      "Allison Jungling est investisseuse immobilière, entrepreneure et formatrice, reconnue pour son approche accessible et concrète de l’investissement. Partie de zéro, elle a construit son indépendance financière grâce à l’immobilier et est devenue une référence féminine du domaine.",
-      "Autrice de deux ouvrages, « Mes 68 commandements pour vivre de l’immobilier » et « Tout ce que j’aurais aimé savoir », elle transmet à la fois des conseils pratiques et une vision plus personnelle de la réussite.",
-      "Chroniqueuse et conférencière, elle décrypte régulièrement les tendances du marché immobilier. Pédagogue, transparente et authentique, elle crée un lien de confiance durable avec une communauté en quête de conseils concrets."
+      "Allison Jungling est investisseuse immobilière, entrepreneure et formatrice, reconnue pour son approche accessible et concrète de l’investissement. **Partie de zéro**, elle a construit son indépendance financière grâce à l’immobilier et est devenue **une référence féminine du domaine**.",
+      "**Autrice de deux ouvrages**, « Mes 68 commandements pour vivre de l’immobilier » et « Tout ce que j’aurais aimé savoir », elle transmet à la fois des conseils pratiques et une vision plus personnelle de la réussite.",
+      "Chroniqueuse et conférencière, elle décrypte régulièrement les tendances du marché immobilier. **Pédagogue, transparente et authentique**, elle crée un lien de confiance durable avec une communauté en quête de conseils concrets."
     ],
     references: "",
     activations: ["Podcasts et émissions", "Conférences et chroniques", "Réels Instagram et vidéos YouTube", "Contenus immobilier et finance"],
@@ -335,9 +725,9 @@ window.BAGHERA_TALENTS = [
     handle: "skintelligence_sj",
     email: "skintelligence@influencebaghera.com",
     bio: [
-      "Sarah-Joyce est passionnée de dermocosmétique et consultante indépendante. Ingénieure en biotechnologie de formation, elle s’est orientée vers l’univers pharmaceutique, comme consultante auprès des plus grands laboratoires et sur le terrain, en pharmacie. Ce parcours hybride lui donne une lecture unique de la peau et des actifs.",
-      "Avec Skintelligence, elle décrypte la peau avec précision et propose une approche du soin claire, moderne et accessible : exigeante mais réaliste, fondée sur la science et l’efficacité réelle.",
-      "Au-delà du digital, elle intervient régulièrement comme animatrice, formatrice et conférencière pour des marques et des laboratoires. À mi-chemin entre la rigueur scientifique et la complicité de l’amie."
+      "Sarah-Joyce est experte en dermocosmétique et consultante indépendante. Ingénieure en biotechnologie de formation, elle s’est orientée vers l’univers pharmaceutique, comme consultante auprès des plus grands laboratoires et sur le terrain, en pharmacie. Ce **parcours hybride** lui donne une lecture unique de la peau et des actifs.",
+      "Avec Skintelligence, elle décrypte la peau avec précision et propose une approche du soin claire, moderne et accessible : exigeante mais réaliste, **fondée sur la science et l’efficacité réelle**.",
+      "Au-delà du digital, elle intervient régulièrement comme **animatrice, formatrice et conférencière** pour des marques et des laboratoires. À mi-chemin entre la rigueur scientifique et la complicité de l’amie."
     ],
     references: "",
     activations: ["Réels en pharmacie", "Animations et conférences pour marques et laboratoires", "Formations dermocosmétique", "Contenus soin de la peau"],
@@ -355,9 +745,9 @@ window.BAGHERA_TALENTS = [
     handle: "nina.lsy",
     email: "nina.lsy@influencebaghera.com",
     bio: [
-      "Nina est diététicienne, coach sportive et créatrice de contenu, animée par une vraie passion pour l’accompagnement et la transmission. Elle aide sa communauté à améliorer son hygiène de vie grâce à des conseils concrets et faciles à appliquer, autour de la nutrition, du sport, du lifestyle et du développement personnel.",
+      "Nina est **diététicienne, coach sportive et créatrice de contenu**, animée par un véritable engagement pour l’accompagnement et la transmission. Elle aide sa communauté à améliorer son hygiène de vie grâce à **des conseils concrets et faciles à appliquer**, autour de la nutrition, du sport, du lifestyle et du développement personnel.",
       "Elle applique elle-même les principes qu’elle partage, pour rester cohérente entre son discours et son mode de vie. Dynamique et curieuse, elle place la nouveauté et le dépassement de soi au centre de son approche.",
-      "Son statut de diététicienne diplômée fait de chaque collaboration un gage de crédibilité : une parole légitime, justement intégrée, pour une communauté exigeante."
+      "Son statut de diététicienne diplômée fait de chaque collaboration **un gage de crédibilité** : **une parole légitime**, justement intégrée, pour une communauté exigeante."
     ],
     references: "",
     galerie: ["assets/img/gal-nina-1.jpg", "assets/img/gal-nina-2.jpg"],
@@ -369,6 +759,7 @@ window.BAGHERA_TALENTS = [
   },
   {
     id: "kristy",
+    masque: true, /* contrat non signé : retirer cette ligne pour réafficher */
     nom: "Kristy Bianco",
     court: "Kristy",
     expertise: "Conseillère en pharmacie",
@@ -388,6 +779,25 @@ window.BAGHERA_TALENTS = [
     ]
   },
   {
+    id: "arthur",
+    nom: "Arthur Retière",
+    court: "Arthur",
+    expertise: "Athlète rugby",
+    photo: "assets/img/talent-arthur.jpg",
+    photoPos: "50% 22%",
+    handle: "arthur__rtr",
+    email: "bonjour@influencebaghera.com",
+    bio: [
+      "**Athlète** installé à Bordeaux, Arthur Retière porte les couleurs de l’Union Bordeaux-Bègles (UBB). Arthur partage son quotidien de rugbyman auprès de **plus de 50 000 abonnés**.",
+      "Entre le terrain, la préparation et les coulisses, une parole d’athlète authentique, qui s’adresse aux marques du sport, de la nutrition et du bien-être."
+    ],
+    references: "",
+    activations: ["Réels et stories Instagram", "Contenus sport et préparation physique", "Partenariats sport, nutrition et bien-être", "Événements et rencontres"],
+    reseaux: [
+      ["Instagram", "https://www.instagram.com/arthur__rtr/"]
+    ]
+  },
+  {
     id: "nastassja",
     nom: "Nastassja",
     court: "Nastassja",
@@ -397,7 +807,7 @@ window.BAGHERA_TALENTS = [
     handle: "nastassjadelabarthe",
     email: "bonjour@influencebaghera.com",
     bio: [
-      "Styliste personnelle, Nastassja aide sa communauté à multiplier les possibilités de son dressing : plus de tenues, moins de vêtements. Elle partage ses sélections et ses conseils en image auprès de plus de 59 000 abonnés.",
+      "**Styliste personnelle**, Nastassja aide sa communauté à multiplier les possibilités de son dressing : plus de tenues, moins de vêtements. Elle partage ses sélections et ses conseils en image auprès de plus de **60 000 abonnés**.",
       "Présente en ligne, à Paris et à Lyon, elle propose des sélections, des accompagnements personnalisés et des collaborations avec les marques."
     ],
     references: "",
@@ -506,7 +916,7 @@ window.BAGHERA_FORMULAIRE = "https://formsubmit.co/ajax/bonjour@influencebaghera
 window.BAGHERA_ACCUEIL_PRIORITE = ["triathlon-roses", "etat-pur-lea", "fortuneo-allison", "respectueuse-emturian"];
 
 /* Ordre d'affichage des talents (comme sur la slide « nos talents »). */
-window.BAGHERA_ORDRE_TALENTS = ["clara", "lea", "emturian", "allison", "skintelligence", "kristy", "nina", "nastassja"];
+window.BAGHERA_ORDRE_TALENTS = ["clara", "lea", "emturian", "allison", "skintelligence", "kristy", "nina", "arthur", "nastassja"];
 
 /* Logos des marques citées en référence sur les fiches talents : nom → fichier.
    Une marque sans logo ici s'affiche simplement avec son nom. */
