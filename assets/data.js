@@ -1190,7 +1190,7 @@ window.BAGHERA_TALENTS = [
     handle: "arthur__rtr",
     email: "bonjour@influencebaghera.com",
     bio: [
-      "**Athlète** installé à Bordeaux, Arthur Retière porte les couleurs de l’Union Bordeaux-Bègles (UBB). Arthur partage son quotidien de rugbyman auprès de **plus de 50 000 abonnés**.",
+      "**Athlète** installé à Bordeaux, Arthur Retière porte les couleurs de l’Union Bordeaux-Bègles (UBB). Arthur partage son **quotidien de rugbyman** avec sa communauté.",
       "Entre le terrain, la préparation et les coulisses, une parole d’athlète authentique, qui s’adresse aux marques du sport, de la nutrition et du bien-être."
     ],
     references: "",
@@ -1209,7 +1209,7 @@ window.BAGHERA_TALENTS = [
     handle: "nastassjadelabarthe",
     email: "bonjour@influencebaghera.com",
     bio: [
-      "**Styliste personnelle**, Nastassja aide sa communauté à multiplier les possibilités de son dressing : plus de tenues, moins de vêtements. Elle partage ses sélections et ses conseils en image auprès de plus de **60 000 abonnés**.",
+      "**Styliste personnelle**, Nastassja aide sa communauté à multiplier les possibilités de son dressing : plus de tenues, moins de vêtements. Elle partage au quotidien ses **sélections et ses conseils en image**.",
       "Présente en ligne, à Paris et à Lyon, elle propose des sélections, des accompagnements personnalisés et des collaborations avec les marques."
     ],
     references: "",
