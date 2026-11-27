@@ -130,6 +130,78 @@ window.BAGHERA_PROJETS = [
     ]
   },
   {
+    id: "alternatives-emturian",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Alternatives",
+    titre: "Mieux consommer sans dépenser plus",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · comparatif · contenu organique",
+    visuel: "assets/img/projet-emturian-alternatives.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DePpdpmKXTH/",
+    lienLabel: "Voir le réel",
+    accroche: "Le meilleur produit n’est pas forcément celui dont tout le monde parle.",
+    projet: [
+      "Un exemple de contenu organique signé Emeline, Emturian : elle décortique, compare et cherche des alternatives aux produits les plus tendance sur les réseaux, souvent moins chères, mieux composées et tout aussi intéressantes.",
+      "Un format pédagogique qui invite sa communauté à prendre le temps de chercher pour mieux consommer, sans forcément dépenser plus."
+    ],
+    pourquoi: [
+      ["Un service rendu à la communauté", "Elle fait le travail de comparaison à la place de ses abonnés."],
+      ["Une démarche responsable", "Composition et prix passés au crible."],
+      ["Une voix indépendante", "Une recommandation libre, loin des effets de mode."]
+    ]
+  },
+  {
+    id: "cheveux-emturian",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "J’achète / j’achète pas",
+    titre: "J’achète / j’achète pas : la version cheveux",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · série · contenu organique",
+    visuel: "assets/img/projet-emturian-cheveux.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/DcrOS42KULg/",
+    lienLabel: "Voir le réel",
+    accroche: "Des produits viraux décryptés, et une alternative plus responsable.",
+    projet: [
+      "Un exemple de contenu organique signé Emeline, Emturian : dans cette deuxième partie consacrée aux cheveux, elle décrypte des produits viraux qu’elle n’achète pas, sur la composition, le prix, la santé et l’environnement.",
+      "Puis elle propose une alternative moins chère et plus responsable à sa communauté."
+    ],
+    pourquoi: [
+      ["Une série qui fidélise", "Le format « j’achète / j’achète pas » est une signature d’Emeline."],
+      ["Une grille d’analyse claire", "Composition, prix, santé, environnement."],
+      ["Une solution à la clé", "Chaque refus s’accompagne d’une alternative."]
+    ]
+  },
+  {
+    id: "baume-tigre-emturian",
+    sansCollab: true, /* contenu organique : classé à part */
+    marque: "Baume du tigre",
+    titre: "Baume du tigre : t’étais au courant ?",
+    talent: "emturian",
+    categories: ["Skincare"],
+    format: "Réel Instagram · décryptage · contenu organique",
+    visuel: "assets/img/projet-emturian-baume-tigre.jpg",
+    cadrage: "50% 35%",
+    ratio: "story",
+    lien: "https://www.instagram.com/p/C6vz8URoUuY/",
+    lienLabel: "Voir le réel",
+    accroche: "Un réel qui a fait réagir toute sa communauté.",
+    projet: [
+      "Un exemple de contenu organique signé Emeline, Emturian : un réel consacré au baume du tigre, raconté face caméra avec le ton direct qui la caractérise.",
+      "Le contenu a rassemblé environ 57 000 mentions « J’aime » et plus de 1 200 commentaires."
+    ],
+    pourquoi: [
+      ["Une très forte audience", "Environ 57 000 mentions « J’aime »."],
+      ["Une communauté qui réagit", "Plus de 1 200 commentaires."],
+      ["Un format spontané", "La proximité fait la force du message."]
+    ]
+  },
+  {
     id: "dupes-emturian",
     sansCollab: true, /* contenu sans collaboration : classé à part */
     marque: "Dupes skincare",
@@ -184,19 +256,19 @@ window.BAGHERA_PROJETS = [
     id: "olisma-creatrices",
     masque: true, /* en attente des informations et du visuel : retirer cette ligne pour l’afficher */
     marque: "Olisma",
-    avec: "toutes nos créatrices",
+    avec: "tous nos talents",
     talents: ["lea", "emturian", "clara", "allison", "skintelligence", "nina"],
     categories: ["Santé", "Micronutrition"],
-    format: "Campagne · plusieurs créatrices",
+    format: "Campagne · plusieurs talents",
     visuel: "assets/img/offre-talents.jpg",
     cadrage: "50% 40%",
     ratio: "story",
     handle: "agencebaghera",
     lien: "https://www.instagram.com/agencebaghera/",
     lienLabel: "Voir le compte de l’agence",
-    accroche: "Une campagne portée par plusieurs de nos créatrices.",
+    accroche: "Une campagne portée par plusieurs de nos talents.",
     projet: [
-      "Une campagne Olisma construite avec l’ensemble de nos créatrices. Détails à compléter.",
+      "Une campagne Olisma construite avec l’ensemble de nos talents. Détails à compléter.",
       "Texte à compléter avec Léa."
     ],
     pourquoi: [
@@ -1279,7 +1351,7 @@ window.BAGHERA_OFFRES_HERO = [
     offre: "Talent management",
     ancre: "offre-talents",
     compte: "agencebaghera",
-    titre: "Révéler des créatrices passionnées",
+    titre: "Révéler des talents passionnés",
     detail: "",
     image: "assets/img/offre-talents.jpg",
     position: "50% 60%"

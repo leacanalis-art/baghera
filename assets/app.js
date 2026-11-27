@@ -53,8 +53,8 @@
   /* ---------- Savoir-faire : carrés qui défilent ---------- */
   var CARRES = [
     ["Réels & posts", "Le conseil <em>en 60 secondes</em>", "Des contenus courts et pédagogiques, pensés pour être partagés et sauvegardés.", "assets/img/formats/reels.jpg", "70% 25%"],
-    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à une créatrice experte.", "assets/img/formats/youtube.jpg", "40% 50%"],
-    ["Podcasts", "La parole <em>de passionnée</em>", "Des épisodes qui installent la marque dans la durée.", "assets/img/formats/podcasts.jpg", "50% 55%"],
+    ["YouTube", "Interviews <em>de marque</em>", "Des formats longs où la marque raconte ses engagements, face à un créateur ou une créatrice de contenu.", "assets/img/formats/youtube.jpg", "40% 50%"],
+    ["Podcasts", "La parole <em>de passionnés</em>", "Des épisodes qui installent la marque dans la durée.", "assets/img/formats/podcasts.jpg", "50% 55%"],
     ["Tournages", "Au cœur <em>du terrain</em>", "En pharmacie, en laboratoire ou dans les coulisses d’une marque.", "assets/img/formats/tournages.jpg", "50% 32%"],
     ["Conférences", "Ateliers <em>& webinars</em>", "Créer de la proximité et de la crédibilité, en présentiel ou en ligne.", "assets/img/formats/conferences.jpg", "50% 25%"],
     ["Événements", "Soirées <em>& lancements</em>", "Casting de créateurs et couverture en influence de vos temps forts.", "assets/img/formats/evenements.jpg", "50% 42%"],
